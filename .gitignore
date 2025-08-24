@@ -1,0 +1,26 @@
+# salaisuudet
+.env
+.htaccess
+*.key
+*.pem
+
+# ympäristö / väliaikaiset
+node_modules/
+npm-debug.log*
+yarn.lock
+error_log
+logs/
+cache/
+tmp/
+_jot_stash/
+
+# PHP / composer (mirror-käyttöön: ei vendor)
+vendor/
+composer.lock
+
+# media & dumpit
+uploads/
+*.zip
+*.tar
+*.sql
+*.bak

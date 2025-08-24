@@ -1,0 +1,104 @@
+{
+  "app": {
+    "title": "AI-ga abistatud tööavaldus",
+    "langLabel": "Keel",
+    "stepsAria": "Sammud",
+    "steps": {
+      "1": "1/3 Põhiandmed",
+      "2": "2/3 Täpsustused",
+      "3": "3/3 Mustand"
+    },
+    "headings": {
+      "step1": "Põhiandmed",
+      "step2": "Täpsustused",
+      "step3": "Mustand"
+    },
+    "hints": {
+      "step1": "Kleebi töökuulutuse link ja kirjelda oma oskusi. AI loob mustandi, mida saad ise muuta.",
+      "intro": "Lühike tutvustus (2–3 lauset)",
+      "strengths": "3 tugevust (komadega eraldatult)",
+      "motivation": "Miks kandideerid sellele ametikohale?",
+      "example": "Parim tõend sinu oskustest",
+      "motivationPh": "2–3 põhjust, miks see roll sind huvitab",
+      "examplePh": "Lühike, konkreetne näide",
+      "autosave": "Mustand salvestatakse kirjutamise ajal brauserisse. Lõpus saad kõik tühjendada."
+    },
+    "errorSummary": {
+      "title": "Palun kontrolli ja paranda järgnevad väljad"
+    },
+    "reset": {
+      "menuButton": "Tühjenda vorm ▾",
+      "draft": "Tühjenda mustand",
+      "allLang": "Tühjenda kõik + keel",
+      "hard": "Sundvärskendus"
+    },
+    "buttons": {
+      "continue": "Jätka",
+      "back": "Tagasi",
+      "createDraft": "Loo AI-mustand"
+    },
+    "toast": {
+      "saved": "Mustand salvestatud"
+    },
+    "loading": {
+      "label": "Laaditakse"
+    }
+  },
+  "ui": {
+    "tone": "Toon",
+    "length": "Pikkus",
+    "style": "Kirjutamisstiil",
+    "iterate": "Muuda stiili",
+    "refine": "Täpsusta",
+    "plain": "Näita lihtsas keeles",
+    "download": "Laadi alla .docx",
+    "reset": "Tühjenda kõik",
+    "back": "Tagasi",
+    "showing": "Kuvatakse: {mode}",
+    "actionsAria": "Mustandi toimingud",
+    "localVersion": "Valitud keel",
+    "finnishVersion": "Soome keeles",
+    "sideBySide": "Kõrvuti",
+    "stacked": "Üksteise all",
+    "layout": "Paigutus",
+    "fiEmpty": "(soomekeelne versioon puudub)"
+  },
+  "mode": {
+    "normal": "tavaline versioon",
+    "plain": "lihtne keel"
+  },
+  "status": {
+    "creating": "Koostatakse mustandit…",
+    "refining": "Täpsustatakse mustandit…",
+    "styling": "Rakendatakse stiili…",
+    "done": "Valmis.",
+    "error": "Viga mustandis."
+  },
+  "field": {
+    "companyLabel": "Ettevõtte nimi (valikuline)",
+    "companyPh": "nt Autoklinikka",
+    "jobOrCompany": "Töökuulutuse link VÕI ettevõtte nimi",
+    "introReq": "Kirjuta endast 2–3 lauset.",
+    "urlInvalid": "URL peab olema korrektne (http/https).",
+    "strengthsPh": "nt kliendikesksus, põhjalikkus, algatusvõimeline"
+  },
+  "tone": {
+    "neutral": "Asjalik",
+    "friendly": "Sõbralik",
+    "formal": "Ametlik"
+  },
+  "length": {
+    "short": "Lühike",
+    "medium": "Keskmine",
+    "long": "Pikk"
+  },
+  "style": {
+    "clear": "Selge üldkeel",
+    "selko": "Lihtne keel",
+    "confident": "Enesekindel ja tulemustele suunatud",
+    "friendly": "Sõbralik ja empaatiline",
+    "analytical": "Analüütiline ja struktureeritud",
+    "story": "Loojutustav",
+    "noNonsense": "Otsekohene ja tehniline"
+  }
+}

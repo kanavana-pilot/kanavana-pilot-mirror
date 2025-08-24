@@ -1,0 +1,201 @@
+<!doctype html>
+
+<html lang="fi">
+
+<head>
+
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<title>Kanavana – Helppo haku</title>
+
+<link rel="stylesheet" href="/assets/css/kanavana-easy.css">
+
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <header>
+
+    <h1>Kanavana – Helppo haku</h1>
+
+    <div class="mut">Selkokieli, lähteet, “Eiku”</div>
+
+  </header>
+
+
+
+  <div class="grid">
+
+    <!-- Vasemmalla: painikkeet + vastaus -->
+
+    <main class="card">
+
+      <div class="row">
+
+        <div class="mut">Valitse aihe, tai klikkaa alavalintaa</div>
+
+        <span id="copyBtn" class="copy btn">Kopioi vastaus</span>
+
+      </div>
+
+
+
+      <div class="row" >
+
+        <span class="switch">
+
+          <button id="modeNormal" aria-pressed="true" class="btn">Normaali</button>
+
+          <button id="modeSelko" aria-pressed="false" class="btn">Selkokieli</button>
+
+        </span>
+
+        <label class="tag btn" title="Näytä vain viranomais- ja .fi/EU-lähteitä">
+
+          <input id="govOnly" type="checkbox" checked > Vain viranomaislähteet
+
+        </label>
+
+        <button id="undoBtn" class="tag btn">↶ Eiku</button>
+
+        <button id="clearBtn" class="tag btn">🗑 Tyhjennä</button>
+
+      </div>
+
+
+
+      <!-- Kategoriatiilet -->
+
+      <section class="tiles" aria-label="Pääkategoriat">
+
+        <article class="tile">
+
+          <div>
+
+            <h3>Seniorit & älypuhelin</h3>
+
+            <p>Perusohjeet, esteettömyys, tietoturva.</p>
+
+          </div>
+
+          <div class="subtiles">
+
+            <button class="chip" data-q="Miten opastan senioria älypuhelimen käytössä?">Aloitusopas</button>
+
+            <button class="chip" data-q="Miten otan käyttöön suuret tekstit ja hätänumeron?">Esteettömyys</button>
+
+            <button class="chip" data-q="Miten estän puhelinhuijaukset ja roskapostin?">Tietoturva</button>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="tile">
+
+          <div>
+
+            <h3>Kotoutuminen</h3>
+
+            <p>Kieli, viranomaiset, arjen palvelut.</p>
+
+          </div>
+
+          <div class="subtiles">
+
+            <button class="chip" data-q="Mistä löydän suomen kielen oppimateriaalit maahanmuuttajille?">Kielen oppiminen</button>
+
+            <button class="chip" data-q="Miten haen henkilökortin Suomessa?">Henkilökortti</button>
+
+            <button class="chip" data-q="Miten haen toimeentulotukea tai asumistukea?">Taloustuki</button>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="tile">
+
+          <div>
+
+            <h3>Työllistyminen & arki-IT</h3>
+
+            <p>CV, työnhaku, digitaidot.</p>
+
+          </div>
+
+          <div class="subtiles">
+
+            <button class="chip" data-q="Miten teen selkeän CV:n ilman aiempaa kokemusta?">CV-apu</button>
+
+            <button class="chip" data-q="Mistä löydän helppoja digikursseja aloittelijalle?">Digitaidot</button>
+
+            <button class="chip" data-q="Miten käytän turvallisesti julkista Wi-Fiä?">Wi-Fi turvallisesti</button>
+
+          </div>
+
+        </article>
+
+      </section>
+
+
+
+      <hr>
+
+
+
+      <!-- Vastaus -->
+
+      <section>
+
+        <div class="row">
+
+          <div class="mut">Vastaus</div>
+
+        </div>
+
+        <div id="answer" class="answer mut">Valitse aihe yllä.</div>
+
+        <div id="sources" class="sources" ></div>
+
+      </section>
+
+    </main>
+
+
+
+    <!-- Oikealla: historia -->
+
+    <aside class="card">
+
+      <div class="row"><div class="mut">Historia</div></div>
+
+      <ul id="history"></ul>
+
+
+
+      <div  class="mut mutb">
+
+        Vinkki: kytke “Vain viranomaislähteet” pois, jos haet blogeja/opaskirjoituksia.
+
+      </div>
+
+    </aside>
+
+  </div>
+
+</div>
+
+
+<script src="/assets/js/kanavana-easy.js"></script>
+
+</body>
+
+</html>
+

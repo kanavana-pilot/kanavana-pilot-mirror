@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kanavana – Haku (Tavily + GPT-mini)</title>
+<link rel="stylesheet" href="/assets/css/kanavana-search.css">
+
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Kanavana – Haku (Tavily + GPT-mini)</h1>
+      <div class="muted small">Selkokieli, viitteet, “Eiku”</div>
+    </header>
+
+    <div class="bar">
+      <input id="q" placeholder="Kysy… esim. Miten haen henkilökortin? / How to renew residence permit?">
+      <select id="lang" title="Kieli">
+        <option value="fi" selected>Suomi</option>
+        <option value="en">English</option>
+        <option value="sv">Svenska</option>
+      </select>
+      <button id="askBtn">Kysy</button>
+      <button id="undoBtn" class="pill" title="Eiku – palaa edelliseen">↶ Eiku</button>
+      <button id="clearBtn" class="pill" title="Tyhjennä historia">🗑 Tyhjennä</button>
+      <span class="muted small">Näytä:</span>
+      <button id="modeNormal" class="pill" aria-pressed="true">Normaali</button>
+      <button id="modeSelko" class="pill" aria-pressed="false">Selkokieli</button>
+    </div>
+
+    <div class="examples">
+      <button class="pill" data-q="Miten opastan senioria älypuhelimen käytössä?">Seniori & puhelin</button>
+      <button class="pill" data-q="Mistä löydän kielenoppimisen materiaalit maahanmuuttajille?">Kotoutuminen</button>
+      <button class="pill" data-q="Kuinka varaudun tietoturvaan julkisessa Wi-Fi:ssä?">Tietoturva</button>
+    </div>
+
+    <div class="grid">
+      <main class="card">
+        <div class="row">
+          <div class="muted">Vastaus</div>
+          <div class="btns"><span id="copyBtn" class="copy" title="Kopioi vastaus">Kopioi</span></div>
+        </div>
+        <div id="answer" class="answer muted">Kysytään kun olet valmis…</div>
+        <div class="sources" id="sources"></div>
+      </main>
+
+      <aside class="card">
+        <div class="row"><div class="muted">Historia</div></div>
+        <ul id="history" class="history"></ul>
+      </aside>
+    </div>
+  </div>
+
+    <script src="/assets/js/kanavana-search.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eiku Prompt – Ajatusten kirkastamo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="public/app.css"/>
+</head>
+<body>
+  <header class="top">
+    <h1>Eiku Prompt</h1>
+    <p>Kirjoita “aivopuuro”, kirkastetaan se askel askeleelta.</p>
+  </header>
+
+  <main class="container">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- 1) Alku -->
+        <section class="swiper-slide">
+          <h2>1/5 – Aivopuuro</h2>
+          <textarea id="blob" placeholder="Kerro ajatuksesi vapaasti..." rows="8"></textarea>
+          <div class="row">
+            <button id="startBtn">Aloita kirkastus</button>
+          </div>
+          <p class="privacy">Tietosuoja: Tekstisi käsitellään anonyymisti. Raakateksti poistetaan 24–72 h kuluessa.</p>
+          <div id="startErr" class="err"></div>
+        </section>
+
+        <!-- 2) Kysymys #1 -->
+        <section class="swiper-slide">
+          <h2>2/5 – Ensimmäinen tarkennus</h2>
+          <pre class="summary" id="sum1"></pre>
+          <label id="q1label"></label>
+          <input id="a1" placeholder="Vastauksesi" />
+
+          <div class="row">
+            <button id="next1">Jatka</button>
+            <button class="ghost" id="eiku1" type="button">Eiku</button>
+          </div>
+          <div id="refErr1" class="err"></div>
+        </section>
+
+        <!-- 3) Kysymys #2 -->
+        <section class="swiper-slide">
+          <h2>3/5 – Toinen tarkennus</h2>
+          <pre class="summary" id="sum2"></pre>
+          <label id="q2label"></label>
+          <input id="a2" placeholder="Vastauksesi" />
+          <div class="row">
+            <button id="next2">Jatka</button>
+            <button class="ghost" id="eiku2" type="button">Eiku</button>
+          </div>
+          <div id="refErr2" class="err"></div>
+        </section>
+
+        <!-- 4) Sävyt & formaatit -->
+        <section class="swiper-slide">
+          <h2>4/5 – Viimeistellään ohjeet</h2>
+          <div class="grid">
+            <div>
+              <h3>Sävy</h3>
+              <label><input type="radio" name="tone" value="neutral" checked> Neutraali</label>
+              <label><input type="radio" name="tone" value="enthusiastic"> Innostunut</label>
+              <label><input type="radio" name="tone" value="formal"> Asiallinen</label>
+            </div>
+            <div>
+              <h3>Pituus</h3>
+              <label><input type="radio" name="length" value="short" checked> Lyhyt</label>
+              <label><input type="radio" name="length" value="medium"> Keskipitkä</label>
+              <label><input type="radio" name="length" value="long"> Pitkä</label>
+            </div>
+            <div>
+              <h3>Kohdeyleisö</h3>
+              <select id="audience">
+                <option value="general">Laaja yleisö</option>
+                <option value="professional">Ammattilaiset</option>
+                <option value="technical">Tekninen yleisö</option>
+              </select>
+            </div>
+            <div>
+              <h3>Formaatti</h3>
+              <label><input type="checkbox" id="format_list"> Lista</label>
+              <label><input type="checkbox" id="format_markdown"> Markdown</label>
+              <label><input type="checkbox" id="format_sources"> Pyydä lähteitä</label>
+            </div>
+          </div>
+          <div class="row">
+            <button id="makeSummary">Luo yhteenveto</button>
+          </div>
+          <div id="sumErr" class="err"></div>
+        </section>
+
+        <!-- 5) Yhteenveto + ajo -->
+        <section class="swiper-slide">
+          <h2>5/5 – Ennen / Jälkeen</h2>
+          <div class="compare">
+            <div>
+              <h3>Alkuperäinen</h3>
+              <pre id="orig"></pre>
+            </div>
+            <div>
+              <h3>Lopullinen prompti</h3>
+              <pre id="final"></pre>
+              <button id="copyFinal">Kopioi</button>
+            </div>
+          </div>
+          <div class="row">
+            <button id="execute">Aja tämä</button>
+            <button id="share">Tallenna / Jaa</button>
+          </div>
+          <div class="row">
+            <button id="makeSummary">Luo yhteenveto</button>
+            <button class="ghost" id="eiku3" type="button">Eiku</button>
+          </div>
+          <div id="execOut" class="answer"></div>
+          <div id="shareOut" class="share"></div>
+          <div id="execErr" class="err"></div>
+        </section>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script>
+  const API = {
+    start: 'api/start.php',
+    refine: 'api/refine.php',
+    summary: 'api/summary.php',
+    execute: 'api/execute.php',
+    share: 'api/share.php',
+    health: 'api/health.php',
+    rewind: 'api/rewind.php'   // ← uusi
+  };
+</script>
+  <script src="public/app.js"></script>
+</body>
+</html>

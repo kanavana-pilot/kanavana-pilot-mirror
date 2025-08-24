@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kanavana – Kauniit painikkeet</title>
+<link rel="stylesheet" href="/assets/css/kanavana-buttons.css">
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Kanavana – Kauniit painikkeet</h1>
+    <div class="mut">Selkokieli, lähteet, “Eiku” • <button id="proToggle" class="tag btn">Pro-tila</button></div>
+  </header>
+
+  <!-- Pro-kyselypalkki (piilotettuna oletuksena) -->
+  <div id="proBar" class="probar hide" aria-hidden="true">
+    <input id="q" placeholder="Kirjoita vapaa kysymys…">
+    <select id="lang">
+      <option value="fi" selected>Suomi</option><option value="en">English</option><option value="sv">Svenska</option>
+    </select>
+    <button id="askBtn" class="btn">Kysy</button>
+    <button id="undoBtn" class="btn tag">↶ Eiku</button>
+    <button id="clearBtn" class="btn tag">🗑 Tyhjennä</button>
+    <span class="mut">Näytä:</span>
+    <span class="switch">
+      <button id="modeNormal" aria-pressed="true" class="btn">Normaali</button>
+      <button id="modeSelko" aria-pressed="false" class="btn">Selkokieli</button>
+    </span>
+  </div>
+
+  <div class="grid">
+    <!-- Vasemmalla: isot painikkeet + vastaus -->
+    <main class="card">
+      <div class="row">
+        <div class="mut">Valitse aihe tai käytä Pro-tilaa</div>
+        <span id="copyBtn" class="copy">Kopioi vastaus</span>
+      </div>
+
+      <!-- Kategoriatiilet -->
+      <section class="tiles" aria-label="Pääkategoriat">
+        <article class="tile">
+          <div>
+            <h3>Seniorit & älypuhelin</h3>
+            <p>Perusohjeet, esteettömyys, turva-asetukset.</p>
+          </div>
+          <div class="subtiles">
+            <button class="chip" data-q="Miten opastan senioria älypuhelimen käytössä?">Aloitusopas</button>
+            <button class="chip" data-q="Miten laitan puhelimeen suuret tekstit ja hätänumeron?">Esteettömyys</button>
+            <button class="chip" data-q="Miten estän puhelinhuijaukset ja roskapostin?">Turva</button>
+          </div>
+        </article>
+
+        <article class="tile">
+          <div>
+            <h3>Kotoutuminen</h3>
+            <p>Kieliopiskelu, viranomaisasiat, arjen palvelut.</p>
+          </div>
+          <div class="subtiles">
+            <button class="chip" data-q="Mistä löydän suomen kielen oppimateriaalit maahanmuuttajille?">Kielen oppiminen</button>
+            <button class="chip" data-q="Miten haen henkilökortin Suomessa?">Henkilökortti</button>
+            <button class="chip" data-q="Miten toimeentulotuki tai asumistuki haetaan?">Taloustuki</button>
+          </div>
+        </article>
+
+        <article class="tile">
+          <div>
+            <h3>Työllistyminen & arki-IT</h3>
+            <p>CV, työnhaku, tietokoneen perustaidoista eteenpäin.</p>
+          </div>
+          <div class="subtiles">
+            <button class="chip" data-q="Miten teen selkeän CV:n ilman aiempaa kokemusta?">CV-apu</button>
+            <button class="chip" data-q="Mistä löydän helppoja digikursseja aloittelijalle?">Digitaidot</button>
+            <button class="chip" data-q="Miten käytän turvallisesti julkista Wi-Fiä?">Tietoturva</button>
+          </div>
+        </article>
+      </section>
+
+      <hr">
+
+      <!-- Vastaus -->
+      <section>
+        <div class="row">
+          <div class="mut">Vastaus</div>
+          <span class="switch">
+            <button id="modeNormal2" aria-pressed="true" class="btn">Normaali</button>
+            <button id="modeSelko2" aria-pressed="false" class="btn">Selkokieli</button>
+          </span>
+        </div>
+        <div id="answer" class="answer mut">Valitse aihe yllä tai siirry Pro-tilaan.</div>
+        <div id="sources" class="sources" "></div>
+      </section>
+    </main>
+
+    <!-- Oikealla: historia -->
+    <aside class="card">
+      <div class="row"><div class="mut">Historia</div></div>
+      <ul id="history" ></ul>
+    </aside>
+  </div>
+</div>
+<script src="/assets/js/kanavana-buttons.js"></script>
+</body>
+</html>

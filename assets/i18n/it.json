@@ -1,0 +1,104 @@
+{
+  "app": {
+    "title": "Candidatura di lavoro assistita dall’IA",
+    "langLabel": "Lingua",
+    "stepsAria": "Passaggi",
+    "steps": {
+      "1": "1/3 Dati di base",
+      "2": "2/3 Dettagli",
+      "3": "3/3 Bozza"
+    },
+    "headings": {
+      "step1": "Dati di base",
+      "step2": "Dettagli",
+      "step3": "Bozza"
+    },
+    "hints": {
+      "step1": "Incolla il link dell’annuncio e descrivi le tue competenze. L’IA creerà una bozza che potrai modificare.",
+      "intro": "Breve presentazione (2–3 frasi)",
+      "strengths": "3 punti di forza (separati da virgola)",
+      "motivation": "Perché ti candidi per questo ruolo?",
+      "example": "La miglior prova delle tue competenze",
+      "motivationPh": "2–3 motivi per cui questo ruolo ti interessa",
+      "examplePh": "Un esempio breve e concreto",
+      "autosave": "La bozza viene salvata nel browser mentre scrivi. Alla fine puoi cancellare tutto."
+    },
+    "errorSummary": {
+      "title": "Controlla e correggi questi campi"
+    },
+    "reset": {
+      "menuButton": "Svuota modulo ▾",
+      "draft": "Svuota bozza",
+      "allLang": "Svuota tutto + lingua",
+      "hard": "Aggiornamento forzato"
+    },
+    "buttons": {
+      "continue": "Continua",
+      "back": "Indietro",
+      "createDraft": "Crea bozza con IA"
+    },
+    "toast": {
+      "saved": "Bozza salvata"
+    },
+    "loading": {
+      "label": "Caricamento"
+    }
+  },
+  "ui": {
+    "tone": "Tono",
+    "length": "Lunghezza",
+    "style": "Stile di scrittura",
+    "iterate": "Itera stile",
+    "refine": "Raffina",
+    "plain": "Mostra in linguaggio semplice",
+    "download": "Scarica .docx",
+    "reset": "Svuota tutto",
+    "back": "Indietro",
+    "showing": "Visualizzazione: {mode}",
+    "actionsAria": "Azioni della bozza",
+    "localVersion": "Lingua selezionata",
+    "finnishVersion": "In finlandese",
+    "sideBySide": "Affiancato",
+    "stacked": "Impilato",
+    "layout": "Disposizione",
+    "fiEmpty": "(versione finlandese assente)"
+  },
+  "mode": {
+    "normal": "versione normale",
+    "plain": "linguaggio semplice"
+  },
+  "status": {
+    "creating": "Creazione della bozza…",
+    "refining": "Raffinamento della bozza…",
+    "styling": "Applicazione dello stile…",
+    "done": "Fatto.",
+    "error": "Errore nella bozza."
+  },
+  "field": {
+    "companyLabel": "Nome azienda (opzionale)",
+    "companyPh": "es. Autoklinikka",
+    "jobOrCompany": "Link all’annuncio OPPURE nome dell’azienda",
+    "introReq": "Scrivi 2–3 frasi su di te.",
+    "urlInvalid": "L’URL deve essere valido (http/https).",
+    "strengthsPh": "es. orientamento al cliente, precisione, proattività"
+  },
+  "tone": {
+    "neutral": "Professionale",
+    "friendly": "Amichevole",
+    "formal": "Ufficiale"
+  },
+  "length": {
+    "short": "Corta",
+    "medium": "Media",
+    "long": "Lunga"
+  },
+  "style": {
+    "clear": "Linguaggio standard chiaro",
+    "selko": "Linguaggio semplice",
+    "confident": "Sicuro & orientato ai risultati",
+    "friendly": "Amichevole & empatico",
+    "analytical": "Analitico & strutturato",
+    "story": "Narrativo",
+    "noNonsense": "Diretto & tecnico"
+  }
+}

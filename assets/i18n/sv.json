@@ -1,0 +1,156 @@
+{
+  "app": {
+    "title": "AI-assisterad jobbansökan",
+    "langLabel": "Språk",
+    "stepsAria": "Steg",
+    "steps": {
+      "1": "1/3 Grunder",
+      "2": "2/3 Detaljer",
+      "3": "3/3 Utkast"
+    },
+    "headings": {
+      "step1": "Grunder",
+      "step2": "Detaljer",
+      "step3": "Utkast"
+    },
+    "hints": {
+      "step1": "Klistra in länken till jobbannonsen och beskriv dina färdigheter. AI skapar ett utkast som du kan redigera.",
+      "intro": "Kort presentation (2–3 meningar)",
+      "strengths": "3 styrkor (kommaseparerade)",
+      "motivation": "Varför söker du den här rollen?",
+      "example": "Ditt bästa bevis på kompetens",
+      "motivationPh": "2–3 skäl till varför rollen intresserar dig",
+      "examplePh": "Ett kort, konkret exempel",
+      "autosave": "Ditt utkast sparas i webbläsaren medan du skriver. Du kan rensa allt i slutet."
+    },
+    "errorSummary": {
+      "title": "Kontrollera och rätta dessa fält"
+    },
+    "reset": {
+      "menuButton": "Rensa formulär ▾",
+      "draft": "Rensa utkast",
+      "allLang": "Rensa allt + språk",
+      "hard": "Hård uppdatering"
+    },
+    "buttons": {
+      "continue": "Fortsätt",
+      "back": "Tillbaka",
+      "createDraft": "Skapa AI-utkast"
+    },
+    "toast": {
+      "saved": "Utkast sparat"
+    },
+    "loading": {
+      "label": "Laddar"
+    }
+  },
+  "ui": {
+    "tone": "Ton",
+    "length": "Längd",
+    "style": "Skrivstil",
+    "iterate": "Iterera stil",
+    "refine": "Finslipa",
+    "plain": "Visa klarspråk",
+    "download": "Ladda ner .docx",
+    "reset": "Rensa allt",
+    "back": "Tillbaka",
+    "showing": "Visas: {mode}",
+    "actionsAria": "Åtgärder för utkastet",
+    "localVersion": "Valt språk",
+    "finnishVersion": "På finska",
+    "sideBySide": "Sida vid sida",
+    "stacked": "Under varandra",
+    "layout": "Layout",
+    "fiEmpty": "(ingen finsk version)"
+  },
+  "mode": {
+    "normal": "normal version",
+    "plain": "klarspråk"
+  },
+  "status": {
+    "creating": "Skapar utkast…",
+    "refining": "Finslipar utkast…",
+    "styling": "Tillämpa stil…",
+    "done": "Klart.",
+    "error": "Fel i utkastet."
+  },
+  "field": {
+    "companyLabel": "Företagsnamn (valfritt)",
+    "companyPh": "t.ex. Autoklinikka",
+    "jobOrCompany": "Länk till jobbannons ELLER företagsnamn",
+    "introReq": "Skriv 2–3 meningar om dig.",
+    "urlInvalid": "URL måste vara giltig (http/https).",
+    "strengthsPh": "t.ex. kundorienterad, noggrann, initiativrik"
+  },
+  "tone": {
+    "neutral": "Saklig",
+    "friendly": "Vänlig",
+    "formal": "Formell"
+  },
+  "length": {
+    "short": "Kort",
+    "medium": "Mellan",
+    "long": "Lång"
+  },
+  "style": {
+    "clear": "Tydligt standardspråk",
+    "selko": "Klarspråk",
+    "confident": "Självsäker & resultatinriktad",
+    "friendly": "Vänlig & empatisk",
+    "analytical": "Analytisk & strukturerad",
+    "story": "Berättande",
+    "noNonsense": "Rakt på sak & teknisk"
+  },
+  "common_sense_ui": {
+    "ui": {
+      "title": "Common Sense Agent – UI",
+      "subtitle": "Mänskligt läsbar vy över agentens steg",
+      "lang_label": "Språk",
+      "controls": "Kontroller",
+      "goal_label": "Mål",
+      "context_label": "Kontext (JSON)",
+      "context_hint": "Använd bara vid behov – lämna annars tomt.",
+      "placeholders": {
+        "goal": "t.ex. Lägg den blandade diskhögen i skåpen",
+        "context": "{\"room\":\"kitchen\",\"notes\":[\"försiktigt med glas\"]}"
+      },
+      "buttons": {
+        "plan": "Skapa plan",
+        "step": "Gå vidare ett steg",
+        "interrupt": "Avbryt / be om delmål",
+        "reset": "Rensa vy"
+      },
+      "headings": {
+        "next_action": "Nästa åtgärd",
+        "why": "Varför så?",
+        "risks": "Risker",
+        "exit": "Klart när…",
+        "memory_writes": "Minnesuppdateringar",
+        "session_memory": "Sessionsminne (sammanfattning)"
+      },
+      "table": {
+        "key": "Nyckel",
+        "value": "Värde",
+        "ttl": "TTL (dagar)"
+      },
+      "empty_state": "Inga steg ännu. Skapa en plan eller gå vidare ett steg.",
+      "error": "Fel: ogiltigt svar",
+      "validator_blocked": "VALIDATORN BLOCKERADE",
+      "details": "Detaljer",
+      "demo_badge": "DEMO (ingen nyckel)",
+      "key_ok_badge": "OPENAI_API_KEY OK"
+    },
+    "actions": {
+      "place_item": "Placera {item} → {target}.",
+      "move": "Gå till {target}.",
+      "open": "Öppna {target}.",
+      "classify": "Identifiera/klassificera {target}.",
+      "plan_subgoal": "Skapa delmål: {goal}.",
+      "ask_user": "Mer info behövs: {question}.",
+      "replan": "Planera om utifrån observerade hinder.",
+      "wait": "Vänta ({seconds} s).",
+      "noop": "Inga åtgärder.",
+      "unknown": "Okänd åtgärd."
+    }
+  }
+}

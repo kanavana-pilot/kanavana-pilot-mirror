@@ -1,0 +1,104 @@
+{
+  "app": {
+    "title": "Candidature assistée par IA",
+    "langLabel": "Langue",
+    "stepsAria": "Étapes",
+    "steps": {
+      "1": "1/3 Informations de base",
+      "2": "2/3 Précisions",
+      "3": "3/3 Brouillon"
+    },
+    "headings": {
+      "step1": "Informations de base",
+      "step2": "Précisions",
+      "step3": "Brouillon"
+    },
+    "hints": {
+      "step1": "Collez le lien de l’offre d’emploi et décrivez vos compétences. L’IA créera un brouillon que vous pourrez modifier.",
+      "intro": "Brève présentation (2–3 phrases)",
+      "strengths": "3 points forts (séparés par des virgules)",
+      "motivation": "Pourquoi postulez-vous à ce poste ?",
+      "example": "Votre meilleure preuve de compétences",
+      "motivationPh": "2–3 raisons pour lesquelles ce poste vous intéresse",
+      "examplePh": "Un exemple court et concret",
+      "autosave": "Votre brouillon est enregistré dans le navigateur pendant la saisie. Vous pourrez tout effacer à la fin."
+    },
+    "errorSummary": {
+      "title": "Veuillez vérifier et corriger ces champs"
+    },
+    "reset": {
+      "menuButton": "Effacer le formulaire ▾",
+      "draft": "Effacer le brouillon",
+      "allLang": "Tout effacer + langue",
+      "hard": "Actualisation forcée"
+    },
+    "buttons": {
+      "continue": "Continuer",
+      "back": "Retour",
+      "createDraft": "Créer un brouillon avec l’IA"
+    },
+    "toast": {
+      "saved": "Brouillon enregistré"
+    },
+    "loading": {
+      "label": "Chargement"
+    }
+  },
+  "ui": {
+    "tone": "Ton",
+    "length": "Longueur",
+    "style": "Style d’écriture",
+    "iterate": "Itérer le style",
+    "refine": "Affiner",
+    "plain": "Afficher en langage simple",
+    "download": "Télécharger .docx",
+    "reset": "Tout effacer",
+    "back": "Retour",
+    "showing": "Affichage : {mode}",
+    "actionsAria": "Actions du brouillon",
+    "localVersion": "Langue sélectionnée",
+    "finnishVersion": "En finnois",
+    "sideBySide": "Côte à côte",
+    "stacked": "Empilé",
+    "layout": "Disposition",
+    "fiEmpty": "(version finnoise absente)"
+  },
+  "mode": {
+    "normal": "version normale",
+    "plain": "langage simple"
+  },
+  "status": {
+    "creating": "Création du brouillon…",
+    "refining": "Affinage du brouillon…",
+    "styling": "Application du style…",
+    "done": "Terminé.",
+    "error": "Erreur de brouillon."
+  },
+  "field": {
+    "companyLabel": "Nom de l’entreprise (optionnel)",
+    "companyPh": "ex. Autoklinikka",
+    "jobOrCompany": "Lien de l’offre OU nom de l’entreprise",
+    "introReq": "Écrivez 2–3 phrases sur vous.",
+    "urlInvalid": "L’URL doit être valide (http/https).",
+    "strengthsPh": "ex. orienté client, méticuleux, proactif"
+  },
+  "tone": {
+    "neutral": "Professionnel",
+    "friendly": "Amical",
+    "formal": "Officiel"
+  },
+  "length": {
+    "short": "Court",
+    "medium": "Moyen",
+    "long": "Long"
+  },
+  "style": {
+    "clear": "Langage standard clair",
+    "selko": "Langage simple",
+    "confident": "Assuré & orienté résultats",
+    "friendly": "Amical & empathique",
+    "analytical": "Analytique & structuré",
+    "story": "Narratif",
+    "noNonsense": "Direct & technique"
+  }
+}

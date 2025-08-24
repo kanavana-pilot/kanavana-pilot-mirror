@@ -1,0 +1,156 @@
+{
+  "app": {
+    "title": "AI-avusteinen työhakemus",
+    "langLabel": "Kieli",
+    "stepsAria": "Vaiheet",
+    "steps": {
+      "1": "1/3 Perustiedot",
+      "2": "2/3 Tarkennukset",
+      "3": "3/3 Luonnos"
+    },
+    "headings": {
+      "step1": "Perustiedot",
+      "step2": "Tarkennukset",
+      "step3": "Luonnos"
+    },
+    "hints": {
+      "step1": "Liitä työilmoituksen linkki ja kuvaile osaamistasi. AI laatii luonnoksen, jota muokkaat itse.",
+      "intro": "Lyhyt esittely (2–3 virkettä)",
+      "strengths": "3 vahvuutta (pilkuin eroteltuna)",
+      "motivation": "Miksi haet tähän tehtävään?",
+      "example": "Paras näyttö osaamisestasi",
+      "motivationPh": "2–3 syytä, miksi tehtävä kiinnostaa",
+      "examplePh": "Lyhyt konkreettinen esimerkki",
+      "autosave": "Luonnos tallentuu selaimeen kirjoittaessasi. Lopussa voit poistaa kaiken."
+    },
+    "errorSummary": {
+      "title": "Tarkista ja korjaa nämä kentät"
+    },
+    "reset": {
+      "menuButton": "Tyhjennä lomake ▾",
+      "draft": "Tyhjennä luonnos",
+      "allLang": "Tyhjennä kaikki + kieli",
+      "hard": "Kova päivitys"
+    },
+    "buttons": {
+      "continue": "Jatka",
+      "back": "Takaisin",
+      "createDraft": "Luo AI-luonnos"
+    },
+    "toast": {
+      "saved": "Luonnos tallennettu"
+    },
+    "loading": {
+      "label": "Ladataan"
+    }
+  },
+  "ui": {
+    "tone": "Sävy",
+    "length": "Pituus",
+    "style": "Kirjoitustyyli",
+    "iterate": "Iteroi tyylillä",
+    "refine": "Säädä uudelleen",
+    "plain": "Näytä selkokieli",
+    "download": "Lataa .docx",
+    "reset": "Poista kaikki",
+    "back": "Takaisin",
+    "showing": "Näytetään: {mode}",
+    "actionsAria": "Luonnoksen toiminnot",
+    "localVersion": "Valittu kieli",
+    "finnishVersion": "Suomeksi",
+    "sideBySide": "Rinnakkain",
+    "stacked": "Allekain",
+    "layout": "Asettelu",
+    "fiEmpty": "(ei suomenkielistä versiota)"
+  },
+  "mode": {
+    "normal": "normaali versio",
+    "plain": "selkokieli"
+  },
+  "status": {
+    "creating": "Luodaan luonnosta…",
+    "refining": "Säädetään luonnosta…",
+    "styling": "Muokataan tyyliä…",
+    "done": "Valmis.",
+    "error": "Virhe luonnoksessa."
+  },
+  "field": {
+    "companyLabel": "Yrityksen nimi (valinnainen)",
+    "companyPh": "Esim. Autoklinikka",
+    "jobOrCompany": "Työpaikan linkki TAI yrityksen nimi",
+    "introReq": "Kirjoita 2–3 virkettä esittelystäsi.",
+    "urlInvalid": "Linkin tulee olla kelvollinen (http/https).",
+    "strengthsPh": "esim. asiakaslähtöisyys, huolellisuus, oma-aloitteisuus"
+  },
+  "tone": {
+    "neutral": "Asiallinen",
+    "friendly": "Ystävällinen",
+    "formal": "Virkamiesmäinen"
+  },
+  "length": {
+    "short": "Lyhyt",
+    "medium": "Keskitaso",
+    "long": "Pitkä"
+  },
+  "style": {
+    "clear": "Selkeä yleiskieli",
+    "selko": "Selkokieli",
+    "confident": "Itsevarma & tuloskeskeinen",
+    "friendly": "Ystävällinen & empaattinen",
+    "analytical": "Analyyttinen & jäsennelty",
+    "story": "Tarinallinen",
+    "noNonsense": "Napakka & tekninen"
+  },
+  "common_sense_ui": {
+    "ui": {
+      "title": "Common Sense Agent – UI",
+      "subtitle": "Luonnollinen näkymä agentin askeleisiin",
+      "lang_label": "Kieli",
+      "controls": "Ohjaimet",
+      "goal_label": "Tavoite",
+      "context_label": "Konteksti (JSON)",
+      "context_hint": "Käytä vain tarvittaessa – jätä muuten tyhjäksi.",
+      "placeholders": {
+        "goal": "Esim. Laita sekalainen astiapino kaappeihin",
+        "context": "{\"room\":\"kitchen\",\"notes\":[\"varovasti laseille\"]}"
+      },
+      "buttons": {
+        "plan": "Luo suunnitelma",
+        "step": "Etene yksi askel",
+        "interrupt": "Keskeytä / pyydä välitavoite",
+        "reset": "Tyhjennä näkymä"
+      },
+      "headings": {
+        "next_action": "Seuraava toimenpide",
+        "why": "Miksi näin?",
+        "risks": "Riskit",
+        "exit": "Valmis, kun…",
+        "memory_writes": "Muistipäivitykset",
+        "session_memory": "Sessiomuisti (tiivistelmä)"
+      },
+      "table": {
+        "key": "Avain",
+        "value": "Arvo",
+        "ttl": "TTL (pv)"
+      },
+      "empty_state": "Ei vielä askeleita. Luo ensin suunnitelma tai etene askeleella.",
+      "error": "Virhe: kelvoton vastaus",
+      "validator_blocked": "VALIDAATTORI ESTI",
+      "details": "Lisätiedot",
+      "demo_badge": "DEMO (ei avainta)",
+      "key_ok_badge": "OPENAI_API_KEY OK"
+    },
+    "actions": {
+      "place_item": "Vie {item} → {target}.",
+      "move": "Siirry kohteeseen {target}.",
+      "open": "Avaa {target}.",
+      "classify": "Tunnista/luokittele {target}.",
+      "plan_subgoal": "Luo välitavoite: {goal}.",
+      "ask_user": "Tarvitaan lisätieto: {question}.",
+      "replan": "Suunnittele uudelleen havaittujen esteiden mukaan.",
+      "wait": "Odota ({seconds} s).",
+      "noop": "Ei toimenpiteitä.",
+      "unknown": "Tuntematon toimenpide."
+    }
+  }
+}

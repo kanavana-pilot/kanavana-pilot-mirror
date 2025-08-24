@@ -1,0 +1,255 @@
+/* ====== A11y-ystävälliset perusmuuttujat ====== */
+:root{
+  /* Värit – tummennettu brand parantaa kontrastia valkoiseen tekstiin */
+  --bg:#f7f8fb;
+  --card:#fff;
+  --ink:#0f172a;
+  --muted:#334155;                 /* selkeämpi kontrasti label-teksteihin */
+  --brand:#1d4ed8;                 /* aiempi #2563eb → hieman tummempi */
+  --brand-ink:#ffffff;
+  --ring:#60a5fa;                  /* fokuksen rengas */
+  --border:#e5e7eb;
+  --control-border:#64748b;        /* 1.4.11 non-text contrast ≥3:1 valkoista vasten */
+
+  --radius:14px;
+  --shadow:0 10px 30px rgba(2,6,23,.06);
+
+  --gap:14px;
+
+  --font-ltr: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Color Emoji", "Apple Color Emoji", sans-serif;
+  --font-rtl: "Noto Sans Arabic", system-ui, "Segoe UI", "Noto Color Emoji", sans-serif;
+}
+.hide-for-users{ display:none !important; } /* piilotetaan käyttäjiltä */ 
+
+/* ====== Perusrunko ====== */
+html{ color-scheme: light dark; }
+body{
+  font-family: var(--font-ltr);
+  background: var(--bg);
+  color: var(--ink);
+  /* isompi peruskoko -> parempi luettavuus ja mobiilissa ei zoomia syöttökenttiin */
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* RTL-tuki */
+html[dir="rtl"] body{ font-family: var(--font-rtl); direction: rtl; }
+
+/* Vaiheet */
+.step{
+  display:none;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:1rem;
+  margin-bottom:1rem;
+}
+.step[aria-hidden="false"]{ display:block; }
+
+/* Otsikot ja labelit */
+h1{ font-weight:700; letter-spacing:.2px; }
+label{ display:block; font-weight:700; margin-top: var(--gap); color: var(--muted); }
+
+/* Linkit – älä luota väriin yksin */
+a{ color: var(--brand); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+
+/* Kentät ja painikkeet – täysi leveys, ei ylivuotoa */
+input, select, textarea, button{
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  font: inherit;
+  border-radius: 12px;
+  border: 1px solid var(--control-border); /* 1.4.11 */
+  background: #fff;
+  color: var(--ink);
+  min-height: 44px;                /* WCAG 2.2 “Target size (min)” ylittyy selvästi */
+  padding: .7rem .9rem;
+}
+
+/* Placeholder ei liian himmeä */
+::placeholder{ color:#64748b; }
+
+/* Textarea – vain pystysuuntainen venytys */
+textarea{ min-height: 8lh; resize: vertical; }
+
+/* Pienet ruudut */
+@media (max-width: 480px){ textarea{ min-height: 10lh; } }
+
+/* Virhetilat */
+.invalid input, .invalid textarea{ border:2px solid #b00020; }
+.error{ color:#b00020; margin-top:6px; }
+.error-summary{ border-left: 6px solid #b00020; background:#fde7ea; padding:14px; margin:18px 0; }
+.error-summary h2{ margin:0 0 8px 0; font-size:1.05rem; }
+.error-summary ul{ margin:0; padding-left:18px; }
+
+/* Napit */
+button{
+  background: var(--brand);
+  color: var(--brand-ink);
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+button:hover{ filter: brightness(1.04); }
+button[disabled]{ opacity:.6; cursor:not-allowed; }
+
+/* Näkyvä fokustila (2.4.7) */
+:where(button, [href], input, select, textarea, [tabindex]):focus-visible{
+  outline: 3px solid var(--ring);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(96,165,250,.25);
+}
+
+/* Lataus-overlay ja spinner */
+.busy-indicator{ position: fixed; inset: 0; display:none; align-items:center; justify-content:center; background: rgba(255,255,255,0.6); z-index: 1000; }
+body.is-loading .busy-indicator{ display:flex; }
+.spinner{ width:42px; height:42px; border-radius:50%; border:4px solid #e5e7eb; border-top-color: var(--brand); animation: spin 1s linear infinite; }
+@keyframes spin{ to{ transform: rotate(360deg); } }
+button[data-loading="true"]::after{
+  content:""; display:inline-block; width:1em; height:1em; margin-left:.5rem;
+  border:2px solid #e5e7eb; border-top-color: currentColor; border-radius:50%;
+  vertical-align:-0.125em; animation: spin 1s linear infinite;
+}
+
+/* Vähennetty liike (2.3.* käytännön tuki) */
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+/* Header & kielivalitsin */
+header{
+  position: sticky; top: 0; z-index: 20;
+  display:flex; align-items:center; justify-content:flex-end; gap:.5rem;
+  padding:.6rem .9rem; background:#fff; border-bottom:1px solid #e5e7eb;
+}
+#langSel{
+  min-height:44px;
+  padding:.45rem 2.25rem .45rem .75rem;
+  color:#0f172a; background:#fff;
+  border:1px solid var(--control-border); border-radius:.5rem; cursor:pointer;
+}
+#langSel:hover{ border-color:#475569; }
+#langSel:focus-visible{ outline:3px solid var(--ring); outline-offset:2px; box-shadow:0 0 0 4px rgba(96,165,250,.25); }
+header:focus-within{ box-shadow: inset 0 -2px 0 #e2e8f0; }
+@media (max-width:640px){ header{ justify-content:space-between; padding:.5rem .75rem; } #langSel{ width:auto; max-width:100%; } }
+
+/* ==== VAIHDELISTA + Reset oikealle (vaakarivi) ==== */
+#stepNav{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  flex-wrap:wrap;
+  padding:.5rem .75rem;
+  background:var(--card,#fff);
+  border:1px solid var(--border,#e5e7eb);
+  border-radius:.75rem;
+  box-shadow:var(--shadow,0 10px 30px rgba(2,6,23,.06));
+}
+#stepNav .badge{
+  display:inline-flex;            /* pakotetaan vaakariville */
+  flex:0 0 auto;
+  width:auto;
+  background:#eef2ff;
+  color:#111827;
+  border:1px solid #e0e7ff;
+  border-radius:9999px;
+  
+  cursor:pointer;
+}
+#stepNav .badge[aria-current="step"]{
+  background:#dbeafe; color:#1e3a8a; font-weight:700; text-decoration:underline;
+}
+/* Näkyvä fokus */
+#stepNav .badge:focus-visible{ outline:3px solid #0ea5e9; outline-offset:2px; }
+
+/* Reset-kontti oikeaan reunaan */
+#resetWrap{ margin-left:auto; position:relative; }
+.btn-reset{
+  background:#111827; color:#fff; border:none;
+  padding:.55rem .9rem; border-radius:.6rem; font-weight:700;
+}
+.btn-reset:hover{ background:#0b1220; }
+
+/* Pudotusvalikon kontrasti (Reset) */
+#resetMenu{
+  position:absolute; top:calc(100% + 8px); right:0;
+  min-width:240px; padding:6px; border-radius:10px;
+  background:#111827; border:1px solid #0b1220; box-shadow:0 12px 24px rgba(0,0,0,.12);
+}
+#resetMenu[hidden]{ display:none; }
+#resetMenu button{
+  display:block; width:100%; text-align:left;
+  border:0; background:transparent; color:#fff;
+  padding:8px 10px; border-radius:8px; cursor:pointer; min-height:44px;
+}
+#resetMenu button:hover{ background:#0b1220; }
+
+/* Pienillä näytöillä napit rivittyvät nätisti */
+@media (max-width:640px){
+  #stepNav{ gap:.4rem; }
+  .btn-reset{ margin-left:auto; } /* varmistaa oikean reunan myös kapealla */
+}
+
+/* Rivit ja toiminnot */
+.row{ margin-top: var(--gap); }
+.row, .row > *{ min-width:0; } /* ei vaakaylivuotoa flex/gridissä */
+.actions{ display:flex; gap:10px; margin-top:20px; flex-wrap:wrap; }
+.actions-split{ display:flex; justify-content:space-between; align-items:center; gap:.75rem; flex-wrap:wrap; }
+.actions-split .left, .actions-split .right{ display:flex; gap:.5rem; flex-wrap:wrap; }
+@media (max-width:640px){ .actions-split{ flex-direction:column; align-items:stretch; } .actions-split .left, .actions-split .right, .actions-split button{ width:100%; } }
+
+/* Kaksipalstainen tulos */
+.dual{ display:grid; gap:1rem; }
+.dual.cols{ grid-template-columns: 1fr 1fr; }
+.dual.stack{ grid-template-columns: 1fr; }
+@media (max-width:900px){ .dual.cols{ grid-template-columns: 1fr; } }
+.dual-pane{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:1rem; box-shadow:var(--shadow); }
+.dual-title{ margin:.25rem 0 .75rem; font-weight:700; }
+.out{ background:#fff; border:1px solid var(--border); padding:1rem; border-radius:.5rem; }
+
+/* Suomen peilipaneeli aina LTR */
+#out-fi{ direction:ltr; unicode-bidi:isolate; }
+
+/* Toast “Tallennettu” */
+.visually-hidden.toast{
+  position:fixed; right:16px; bottom:16px; opacity:0; transform:translateY(8px);
+  transition:.25s; background:#0ea5e9; color:#fff; padding:.6rem .9rem; border-radius:12px;
+}
+.visually-hidden.toast.show{ opacity:1; transform:none; }
+
+/* --- (Yhteensopivuuden vuoksi: vanha reset-dropdown) --- */
+.topbar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e5e7eb;padding:.5rem;display:flex;gap:.5rem;align-items:center;justify-content:space-between}
+.menu{position:relative}
+.menu-list{
+  position:absolute; right:0; top:calc(100% + 6px);
+  background:#fff; border:1px solid #e5e7eb; border-radius:10px;
+  box-shadow:0 10px 30px rgba(2,6,23,.08); display:grid; min-width:260px; overflow:hidden;
+}
+.menu-list>button{
+  padding:.8rem 1rem; text-align:left; border:none; background:#fff; color:#0f172a; min-height:44px;
+}
+.menu-list>button:hover{ background:#0b2a6b; color:#fff; } /* EI valkoista tekstin päällä valkoista */
+
+/* Visually hidden apuluokka */
+.visually-hidden{
+  position:absolute !important;
+  width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip: rect(0 0 0 0); white-space:nowrap; border:0;
+}
+
+/* Forced-colors / High Contrast -tila (Windows) */
+@media (forced-colors: active){
+  *{ forced-color-adjust: auto; }
+  body, .step, .dual-pane, .out{ background: Canvas; color: CanvasText; }
+  input, select, textarea, button{ border-color: CanvasText; background: Canvas; color: CanvasText; }
+  :where(button, [href], input, select, textarea, [tabindex]):focus-visible{
+    outline: 2px solid Highlight; outline-offset: 3px; box-shadow: none;
+  }
+}

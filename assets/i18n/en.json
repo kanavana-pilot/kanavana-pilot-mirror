@@ -1,0 +1,156 @@
+{
+  "app": {
+    "title": "AI-assisted job application",
+    "langLabel": "Language",
+    "stepsAria": "Steps",
+    "steps": {
+      "1": "1/3 Basics",
+      "2": "2/3 Details",
+      "3": "3/3 Draft"
+    },
+    "headings": {
+      "step1": "Basics",
+      "step2": "Details",
+      "step3": "Draft"
+    },
+    "hints": {
+      "step1": "Paste the job ad link and describe your skills. AI will create a draft that you can edit.",
+      "intro": "Short introduction (2–3 sentences)",
+      "strengths": "3 strengths (comma-separated)",
+      "motivation": "Why are you applying for this role?",
+      "example": "Your best evidence of skills",
+      "motivationPh": "2–3 reasons why this role interests you",
+      "examplePh": "A short, concrete example",
+      "autosave": "Your draft is saved to the browser as you write. You can clear everything at the end."
+    },
+    "errorSummary": {
+      "title": "Please check and fix these fields"
+    },
+    "reset": {
+      "menuButton": "Clear form ▾",
+      "draft": "Clear draft",
+      "allLang": "Clear all + language",
+      "hard": "Hard refresh"
+    },
+    "buttons": {
+      "continue": "Continue",
+      "back": "Back",
+      "createDraft": "Create AI draft"
+    },
+    "toast": {
+      "saved": "Draft saved"
+    },
+    "loading": {
+      "label": "Loading"
+    }
+  },
+  "ui": {
+    "tone": "Tone",
+    "length": "Length",
+    "style": "Writing style",
+    "iterate": "Iterate style",
+    "refine": "Refine",
+    "plain": "Show plain language",
+    "download": "Download .docx",
+    "reset": "Clear all",
+    "back": "Back",
+    "showing": "Showing: {mode}",
+    "actionsAria": "Draft actions",
+    "localVersion": "Selected language",
+    "finnishVersion": "In Finnish",
+    "sideBySide": "Side by side",
+    "stacked": "Stacked",
+    "layout": "Layout",
+    "fiEmpty": "(no Finnish version)"
+  },
+  "mode": {
+    "normal": "normal version",
+    "plain": "plain language"
+  },
+  "status": {
+    "creating": "Creating draft…",
+    "refining": "Refining draft…",
+    "styling": "Applying style…",
+    "done": "Done.",
+    "error": "Draft error."
+  },
+  "field": {
+    "companyLabel": "Company name (optional)",
+    "companyPh": "e.g. Autoklinikka",
+    "jobOrCompany": "Job ad link OR company name",
+    "introReq": "Write 2–3 sentences about yourself.",
+    "urlInvalid": "URL must be valid (http/https).",
+    "strengthsPh": "e.g. customer-oriented, meticulous, self-starter"
+  },
+  "tone": {
+    "neutral": "Businesslike",
+    "friendly": "Friendly",
+    "formal": "Official"
+  },
+  "length": {
+    "short": "Short",
+    "medium": "Medium",
+    "long": "Long"
+  },
+  "style": {
+    "clear": "Clear standard language",
+    "selko": "Plain language",
+    "confident": "Confident & results-oriented",
+    "friendly": "Friendly & empathetic",
+    "analytical": "Analytical & structured",
+    "story": "Story-driven",
+    "noNonsense": "No-nonsense & technical"
+  },
+  "common_sense_ui": {
+    "ui": {
+      "title": "Common Sense Agent – UI",
+      "subtitle": "Human-readable view of agent steps",
+      "lang_label": "Language",
+      "controls": "Controls",
+      "goal_label": "Goal",
+      "context_label": "Context (JSON)",
+      "context_hint": "Use only if needed – leave empty otherwise.",
+      "placeholders": {
+        "goal": "e.g. Put the mixed stack of dishes into the cabinets",
+        "context": "{\"room\":\"kitchen\",\"notes\":[\"careful with glass\"]}"
+      },
+      "buttons": {
+        "plan": "Create plan",
+        "step": "Advance one step",
+        "interrupt": "Interrupt / request sub-goal",
+        "reset": "Clear view"
+      },
+      "headings": {
+        "next_action": "Next action",
+        "why": "Why this?",
+        "risks": "Risks",
+        "exit": "Done when…",
+        "memory_writes": "Memory writes",
+        "session_memory": "Session memory (summary)"
+      },
+      "table": {
+        "key": "Key",
+        "value": "Value",
+        "ttl": "TTL (days)"
+      },
+      "empty_state": "No steps yet. Create a plan or advance one step.",
+      "error": "Error: invalid response",
+      "validator_blocked": "VALIDATOR BLOCKED",
+      "details": "Details",
+      "demo_badge": "DEMO (no key)",
+      "key_ok_badge": "OPENAI_API_KEY OK"
+    },
+    "actions": {
+      "place_item": "Place {item} → {target}.",
+      "move": "Move to {target}.",
+      "open": "Open {target}.",
+      "classify": "Identify/classify {target}.",
+      "plan_subgoal": "Create sub-goal: {goal}.",
+      "ask_user": "More info needed: {question}.",
+      "replan": "Replan based on observed obstacles.",
+      "wait": "Wait ({seconds} s).",
+      "noop": "No action.",
+      "unknown": "Unknown action."
+    }
+  }
+}

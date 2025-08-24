@@ -1,0 +1,48 @@
+:root{--bg:#0a0f14;--fg:#e1e8f5;--muted:#7a8ba6;--accent:#4ea1ff;--accent-hover:#3a8dff;--err:#ff6b6b}
+
+.visually-hidden{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.ui-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:12px}
+.ui-header .titles .subtitle{color:var(--muted);margin:.25rem 0 0}
+.ui-header .header-ctrls{display:flex;align-items:center;gap:8px}
+.ui-header .lang-label{margin:0 4px 0 0}
+#langSel{min-width:120px}
+
+/* Kortit & layout */
+.controls.card{margin-top:8px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:820px){ .grid-2{grid-template-columns:1fr} }
+
+.cards-area{margin:16px 0}
+.cards{display:grid;gap:12px}
+.card.step .big{font-size:18px;font-weight:700;margin-top:2px}
+
+.meta{display:flex;gap:8px;margin-bottom:6px}
+.meta-pill{display:inline-block;border:1px solid #2a3441;background:#0e141b;padding:2px 8px;border-radius:999px;color:var(--muted);font-size:12px}
+
+/* Sessiomuisti */
+.session-mem{margin:16px 0}
+.kv-list{list-style:none;margin:0;padding:0}
+.kv-list li{padding:6px 0;border-bottom:1px dashed #213040}
+.kv-list li:last-child{border-bottom:0}
+.kv-list strong{color:#cfe4ff}
+
+/* Mem write -taulukko */
+table.memwrites{width:100%;border-collapse:separate;border-spacing:0 6px}
+table.memwrites th, table.memwrites td{padding:8px 10px;border:1px solid #1d2733;background:#0a0f14}
+table.memwrites th{color:var(--muted);font-weight:700}
+table.memwrites td{max-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* Empty state */
+.empty{padding:20px;text-align:center;color:var(--muted);border:1px dashed #253041;border-radius:12px}
+
+/* Buttons */
+button.ghost{background:transparent;border:1px solid #2a3441;color:var(--muted)}
+
+/* Error kortti */
+.card.error{border-color:rgba(255,107,107,.35)}
+.card.error h3{color:var(--err)}
+.card.error pre{max-height:240px}
+
+/* Details */
+details summary{cursor:pointer;color:var(--muted);margin-top:8px}
+details pre{margin-top:8px}

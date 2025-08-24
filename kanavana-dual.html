@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<title>Kanavana Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+  crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/css/kanavana-dual.css">
+  
+</head>
+<body>
+
+<div class="container py-4">
+  <h1 class="mb-4 text-center">Kanavana Search</h1>
+
+  <!-- Näkymän vaihto -->
+  <div class="view-toggle text-center mb-4">
+    <button id="btn-basic" class="btn btn-primary me-2">Perus-näkymä</button>
+    <button id="btn-pro" class="btn btn-outline-primary">Pro-näkymä</button>
+  </div>
+
+  <!-- Kielivalinta -->
+<!-- Kielivalinta -->
+<div class="text-center mb-4">
+  <select id="lang" class="form-select w-auto d-inline-block">
+    <option value="fi">Suomi</option>
+    <option value="en">English</option>
+    <option value="sv">Svenska</option>
+  </select>
+
+  <!-- Vain viranomaislähteet -kytkin -->
+  <div class="form-check form-switch d-inline-block ms-3 align-middle">
+    <input class="form-check-input" type="checkbox" id="govOnly" checked>
+    <label class="form-check-label" for="govOnly">Vain viranomaislähteet</label>
+  </div>
+</div>
+
+
+  <!-- Perus-näkymä -->
+  <div id="basic-view">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <button class="btn btn-lg btn-success w-100 basic-btn">Mikä on tekoäly?</button>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-lg btn-success w-100 basic-btn">Uusimmat uutiset</button>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-lg btn-success w-100 basic-btn">Sää Helsingissä</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pro-näkymä -->
+  <div id="pro-view">
+    <div class="input-group">
+      <input type="text" id="query" class="form-control" placeholder="Kirjoita kysymyksesi...">
+      <button id="search-btn" class="btn btn-primary">Hae</button>
+    </div>
+  </div>
+
+  <!-- Tulokset -->
+  <div id="results"></div>
+</div>
+
+<script src="/assets/js/kanavana-dual.js"></script>
+
+</body>
+</html>

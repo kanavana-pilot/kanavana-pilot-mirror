@@ -1,0 +1,215 @@
+/* ===== Base ===== */
+:root{
+  --bg: #0e1621;
+  --panel: #121b28;
+  --card: #0f1926;
+  --fg: #e6eef8;
+  --muted: #a9b3bf;
+  --line: #1b2430;
+  --accent: #38bdf8;
+  --accent-2: #7dd3fc;
+  --danger: #ef4444;
+  --ok: #22c55e;
+  --warn: #f59e0b;
+  --shadow: 0 8px 30px rgba(0,0,0,.35);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --space: 16px;
+}
+
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #0b1320 0%, transparent 60%),
+    radial-gradient(1000px 800px at 120% 20%, #0b1320 0%, transparent 60%),
+    var(--bg);
+  color: var(--fg);
+}
+
+/* ===== Layout shell ===== */
+.page{}
+.container{
+  width: 100%;
+  max-width: 980px;           /* <<< kapea, demoon sopiva */
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ===== Topbar ===== */
+.topbar{
+  border-bottom: 1px solid var(--line);
+  background: rgba(12,18,28,.85);
+  backdrop-filter: blur(6px);
+}
+.topbar .container{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 16px;
+}
+.brand strong{ font-weight: 700; }
+.brand .muted{ color: var(--muted); margin-left: 8px; font-size:.95rem; }
+.controls{
+  display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:flex-end;
+}
+.controls label{ color: var(--muted); }
+.controls select, .controls button{
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--fg);
+  padding: 0 12px;
+}
+.controls button{ cursor:pointer; }
+.controls .ghost{ background: transparent; }
+.controls .danger{ border-color: #3a1e24; background: #241116; color:#ffd4d4; }
+.controls .exit{ border-color: #1e2a3a; background:#101a26; }
+.controls .primary{ border-color: #113145; background:#0b2434; }
+
+/* ===== Privacy notice ===== */
+.notice.privacy{
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+}
+.notice .privacy-filter{
+  display:flex; gap:.5rem; align-items:center;
+  margin-top: 6px;
+}
+.notice .privacy-tips{
+  margin:.5rem 0 0; color: var(--muted);
+}
+
+/* ===== Two-column app layout (narrow) ===== */
+.layout{
+  display:grid; gap: 16px;
+}
+.layout-narrow{
+  grid-template-columns: 280px 1fr;
+  align-items: start;
+  margin: 16px 0 24px;
+}
+
+/* ===== Timeline panel ===== */
+.timeline{
+  position: sticky; top: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: 12px;
+  max-height: calc(100svh - 120px);
+  overflow: auto;
+  box-shadow: var(--shadow);
+}
+.timeline-list{ list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+.timeline-empty{
+  color: var(--muted); font-style: italic; padding: 8px;
+}
+.timeline-item{
+  border:1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: #0c1622;
+}
+.timeline-step{
+  width:100%; display:flex; align-items:center; gap:8px; text-align:left;
+  padding:10px 12px; border:0; background:transparent; color:var(--fg); cursor:pointer;
+  border-bottom: 1px solid var(--line);
+}
+.timeline-step:hover{ background:#0b1c2a; }
+.step-num{
+  width:26px; height:26px; border-radius: 8px;
+  display:grid; place-items:center;
+  background:#0a2232; border:1px solid #103044; font-weight:700; font-size:.9rem;
+}
+.step-title{ font-weight:600; font-size:.95rem; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.step-body{ padding:10px 12px 12px; display:grid; gap:8px; }
+.step-user{ color:var(--muted); font-size:.95rem; }
+.step-ai{ font-size:.98rem; }
+.step-checklist{ margin:6px 0 0 0; padding-left: 18px; }
+
+/* ===== Workspace ===== */
+.workspace{ display:grid; gap:16px; }
+.card{
+  border:1px solid var(--line);
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px;
+}
+.topic label, .prompt label{ display:block; margin-bottom:6px; color: var(--muted); }
+.topic input, .prompt textarea{
+  width:100%; border-radius: 12px; border:1px solid var(--line);
+  background:#0c1622; color:var(--fg); padding:12px 14px; outline: none;
+}
+.topic input:focus, .prompt textarea:focus{
+  border-color:#17486a; box-shadow: 0 0 0 3px rgba(56,189,248,.15);
+}
+.prompt-actions{
+  display:flex; justify-content:flex-end; margin-top:10px;
+}
+.prompt-actions.sticky{
+  position: sticky; bottom: 0; z-index: 2;
+  padding: 10px 0 0;
+  background: linear-gradient(to top, rgba(14,22,33,1), rgba(14,22,33,0));
+}
+.prompt-actions .primary{
+  height:40px; padding: 0 16px; border-radius: 10px; border:1px solid #113145; background:#0b2434; color:var(--fg); cursor:pointer;
+}
+.prompt-actions .primary:hover{ background:#0d2b40; }
+.ai-panel h3{ margin:0 0 8px; }
+
+/* ===== Footnote ===== */
+.footnote{ color: var(--muted); text-align:center; padding: 6px 0 14px; }
+
+/* ===== Char counters ===== */
+.char-counter{
+  margin-top: 6px;
+  font-size: .85rem;
+  color: var(--muted);
+  text-align: right;
+}
+.char-counter.near-limit{ color:#ffd166; }
+.char-counter.over-limit{ color:#ff6a6a; }
+
+/* ===== Loading overlay + blur ===== */
+.loading-overlay{
+  position:fixed; inset:0;
+  display:grid; place-items:center;
+  background:rgba(0,0,0,.45);
+  backdrop-filter: blur(1.5px);
+  z-index:9999;
+}
+.loading-overlay[hidden]{ display:none; }
+.loading-overlay .loading-text{
+  margin-top:10px; color:var(--fg); font-weight:600;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+.spinner{
+  width:48px; height:48px;
+  border:4px solid rgba(255,255,255,.3);
+  border-top-color: rgba(255,255,255,1);
+  border-radius:50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+body.is-loading .layout{ filter: blur(3px); pointer-events: none; user-select: none; }
+
+/* ===== Buttons in content ===== */
+button{ font: inherit; }
+button.primary{ border-color:#113145; background:#0b2434; }
+
+/* ===== Responsive ===== */
+@media (max-width: 980px){
+  .layout-narrow{ grid-template-columns: 1fr; }
+  .timeline{ position: relative; top:auto; max-height: none; }
+}
+@media (max-width: 520px){
+  .controls{ gap:6px; }
+  .controls label{ display:none; }
+  .brand .muted{ display:none; }
+  .prompt textarea{ min-height: 160px; }
+}

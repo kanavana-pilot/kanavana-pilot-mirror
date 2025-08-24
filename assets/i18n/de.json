@@ -1,0 +1,104 @@
+{
+  "app": {
+    "title": "KI-gestützte Bewerbung",
+    "langLabel": "Sprache",
+    "stepsAria": "Schritte",
+    "steps": {
+      "1": "1/3 Basisdaten",
+      "2": "2/3 Details",
+      "3": "3/3 Entwurf"
+    },
+    "headings": {
+      "step1": "Basisdaten",
+      "step2": "Details",
+      "step3": "Entwurf"
+    },
+    "hints": {
+      "step1": "Fügen Sie den Link zur Stellenausschreibung ein und beschreiben Sie Ihre Fähigkeiten. Die KI erstellt einen Entwurf, den Sie bearbeiten können.",
+      "intro": "Kurze Vorstellung (2–3 Sätze)",
+      "strengths": "3 Stärken (durch Komma getrennt)",
+      "motivation": "Warum bewerben Sie sich auf diese Stelle?",
+      "example": "Ihr bester Nachweis Ihrer Fähigkeiten",
+      "motivationPh": "2–3 Gründe, warum Sie sich für diese Stelle interessieren",
+      "examplePh": "Ein kurzes, konkretes Beispiel",
+      "autosave": "Der Entwurf wird beim Schreiben im Browser gespeichert. Am Ende können Sie alles löschen."
+    },
+    "errorSummary": {
+      "title": "Bitte prüfen und korrigieren Sie diese Felder"
+    },
+    "reset": {
+      "menuButton": "Formular leeren ▾",
+      "draft": "Entwurf löschen",
+      "allLang": "Alles löschen + Sprache",
+      "hard": "Erzwungene Aktualisierung"
+    },
+    "buttons": {
+      "continue": "Weiter",
+      "back": "Zurück",
+      "createDraft": "KI-Entwurf erstellen"
+    },
+    "toast": {
+      "saved": "Entwurf gespeichert"
+    },
+    "loading": {
+      "label": "Wird geladen"
+    }
+  },
+  "ui": {
+    "tone": "Ton",
+    "length": "Länge",
+    "style": "Schreibstil",
+    "iterate": "Stil iterieren",
+    "refine": "Verfeinern",
+    "plain": "In einfacher Sprache anzeigen",
+    "download": ".docx herunterladen",
+    "reset": "Alles löschen",
+    "back": "Zurück",
+    "showing": "Angezeigt: {mode}",
+    "actionsAria": "Entwurfsaktionen",
+    "localVersion": "Ausgewählte Sprache",
+    "finnishVersion": "Auf Finnisch",
+    "sideBySide": "Nebeneinander",
+    "stacked": "Untereinander",
+    "layout": "Anordnung",
+    "fiEmpty": "(keine finnische Version)"
+  },
+  "mode": {
+    "normal": "normale Version",
+    "plain": "einfache Sprache"
+  },
+  "status": {
+    "creating": "Entwurf wird erstellt…",
+    "refining": "Entwurf wird verfeinert…",
+    "styling": "Stil wird angewendet…",
+    "done": "Fertig.",
+    "error": "Fehler im Entwurf."
+  },
+  "field": {
+    "companyLabel": "Unternehmensname (optional)",
+    "companyPh": "z. B. Autoklinikka",
+    "jobOrCompany": "Link zur Stellenausschreibung ODER Unternehmensname",
+    "introReq": "Schreiben Sie 2–3 Sätze über sich.",
+    "urlInvalid": "URL muss gültig sein (http/https).",
+    "strengthsPh": "z. B. kundenorientiert, sorgfältig, eigeninitiativ"
+  },
+  "tone": {
+    "neutral": "Sachlich",
+    "friendly": "Freundlich",
+    "formal": "Formell"
+  },
+  "length": {
+    "short": "Kurz",
+    "medium": "Mittel",
+    "long": "Lang"
+  },
+  "style": {
+    "clear": "Klare Standardsprache",
+    "selko": "Einfache Sprache",
+    "confident": "Selbstsicher & ergebnisorientiert",
+    "friendly": "Freundlich & empathisch",
+    "analytical": "Analytisch & strukturiert",
+    "story": "Erzählend",
+    "noNonsense": "Direkt & technisch"
+  }
+}

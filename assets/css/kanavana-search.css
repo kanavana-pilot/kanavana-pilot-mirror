@@ -1,0 +1,31 @@
+    :root { --bg:#0c0f12; --card:#141a20; --ink:#e8edf2; --muted:#9fb0c2; --accent:#7bdfff; --line:#23303b; }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto}
+    .wrap{max-width:980px;margin:0 auto;padding:24px}
+    header{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:16px}
+    header h1{font-size:18px;margin:0}
+    .bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .bar select,.bar input,.bar button{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+    .bar input{flex:1;min-width:240px}
+    .bar button{cursor:pointer}
+    .bar button:hover{border-color:var(--accent)}
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:16px;align-items:start}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+    .answer{min-height:160px;white-space:pre-wrap}
+    .answer.selko{font-size:18px;line-height:1.7}
+    .muted{color:var(--muted);font-size:14px}
+    .sources ol{padding-left:18px;margin:6px 0 0}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:6px 0 10px}
+    .row .btns{display:flex;gap:8px;flex-wrap:wrap}
+    .pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:transparent;color:var(--ink);cursor:pointer;font-size:14px}
+    .pill[aria-pressed="true"]{border-color:var(--accent)}
+    .pill:hover{border-color:var(--accent)}
+    .history li{list-style:none;margin:0;padding:0}
+    .history button{width:100%;text-align:left}
+    .spinner{display:inline-block;width:16px;height:16px;border-radius:50%;border:2px solid var(--muted);border-top-color:var(--accent);animation:spin 1s linear infinite;vertical-align:-2px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .examples{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .examples button{font-size:13px}
+    .small{font-size:13px}
+    .warn{background:#2a1b1b;border-color:#5a3030}
+    .copy{cursor:pointer;font-size:13px;border:1px dashed var(--line);padding:6px 8px;border-radius:8px}

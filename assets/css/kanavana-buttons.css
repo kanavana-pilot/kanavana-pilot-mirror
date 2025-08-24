@@ -1,0 +1,48 @@
+  :root{
+    --bg:#0b0f13; --ink:#eaf1f7; --mut:#9bb0c3; --card:#131a21; --line:#223241; --accent:#7bdfff; --ok:#2ecc71; --warn:#b84b4b;
+  }
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto}
+  .wrap{max-width:1100px;margin:0 auto;padding:18px}
+  header{display:flex;align-items:center;gap:12px;justify-content:space-between}
+  header h1{font-size:20px;margin:0}
+  .mut{color:var(--mut);font-size:14px}
+  .grid{display:grid;grid-template-columns:1.25fr 1fr;gap:18px;margin-top:14px}
+  @media (max-width:1000px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+  .tag{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);padding:8px 12px;border-radius:999px}
+  .btn{cursor:pointer;user-select:none}
+  .btn:focus-visible{outline:2px solid var(--accent)}
+  .switch{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+  .switch button{background:transparent;border:0;color:var(--ink);padding:8px 12px}
+  .switch button[aria-pressed="true"]{background:rgba(123,223,255,.12);border-left:1px solid var(--line);border-right:1px solid var(--line)}
+  /* painikekortit */
+  .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  @media (max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:560px){.tiles{grid-template-columns:1fr}}
+  .tile{
+    background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
+    border:1px solid var(--line); border-radius:18px; padding:18px; min-height:92px;
+    display:flex;flex-direction:column;justify-content:space-between; transition:.15s transform ease, .15s border-color ease;
+  }
+  .tile:hover{transform:translateY(-2px); border-color:var(--accent)}
+  .tile h3{font-size:17px;margin:0 0 6px}
+  .tile p{margin:0;color:var(--mut);font-size:14px}
+  .subtiles{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .chip{background:transparent;border:1px dashed var(--line);border-radius:999px;padding:8px 12px;font-size:14px;cursor:pointer}
+  .chip:hover{border-color:var(--accent)}
+  /* vastaus */
+  .answer{min-height:180px;white-space:pre-wrap}
+  .answer.selko{font-size:18px;line-height:1.7}
+  .copy{border:1px dashed var(--line);padding:6px 10px;border-radius:10px;cursor:pointer;font-size:14px}
+  .sources ol{padding-left:18px;margin:6px 0 0}
+  /* pro-tila */
+  .probar{display:flex;gap:8px;align-items:center;margin-top:10px}
+  .probar input,.probar button,.probar select{
+    background:var(--card); color:var(--ink); border:1px solid var(--line); border-radius:10px; padding:10px 12px;
+  }
+  .probar input{flex:1;min-width:220px}
+  .hide{display:none}
+  .spinner{display:inline-block;width:16px;height:16px;border-radius:50%;border:2px solid var(--mut);border-top-color:var(--accent);animation:spin 1s linear infinite;vertical-align:-2px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .warn{background:#2a1b1b;border-color:#5a3030}

@@ -1,0 +1,104 @@
+{
+  "app": {
+    "title": "Codsiga shaqo ee caawinta AI",
+    "langLabel": "Luuqad",
+    "stepsAria": "Tallaabooyin",
+    "steps": {
+      "1": "1/3 Macluumaadka aasaasiga ah",
+      "2": "2/3 Faahfaahin",
+      "3": "3/3 Qabyo-qoraal"
+    },
+    "headings": {
+      "step1": "Macluumaadka aasaasiga ah",
+      "step2": "Faahfaahin",
+      "step3": "Qabyo-qoraal"
+    },
+    "hints": {
+      "step1": "Geli xiriirka xayeysiiska shaqada oo sharax xirfadahaaga. AI waxay abuuri doontaa qabyo aad adigu wax ka beddeli karto.",
+      "intro": "Isbarasho gaaban (2–3 jumladood)",
+      "strengths": "3 xoog (ku kala saar faasiil)",
+      "motivation": "Maxaad uga codsanaysaa shaqadan?",
+      "example": "Caddeynta ugu fiican ee xirfadahaaga",
+      "motivationPh": "2–3 sababood oo shaqadani ku xiisaynayso",
+      "examplePh": "Tusaale gaaban oo cad",
+      "autosave": "Qabyo-qoraalka waxa si toos ah loogu keydiyaa browser-ka marka aad qorayso. Dhamaadka waxaad tirtiri kartaa dhammaan."
+    },
+    "errorSummary": {
+      "title": "Fadlan hubi oo sax meelahan"
+    },
+    "reset": {
+      "menuButton": "Nadiifi foomka ▾",
+      "draft": "Tirtir qabyo-qoraalka",
+      "allLang": "Tirtir dhammaan + luuqadda",
+      "hard": "Cusbooneysiin adag"
+    },
+    "buttons": {
+      "continue": "Sii wad",
+      "back": "Dib u noqo",
+      "createDraft": "Abuur qabyo AI"
+    },
+    "toast": {
+      "saved": "Qabyo-qoraal waa la keydiyay"
+    },
+    "loading": {
+      "label": "La soo dejinayo"
+    }
+  },
+  "ui": {
+    "tone": "Dabeecad",
+    "length": "Dherer",
+    "style": "Qaab qorid",
+    "iterate": "Ku celi qaabka",
+    "refine": "Hagaaji",
+    "plain": "Muuji af fudud",
+    "download": "Soo deji .docx",
+    "reset": "Tirtir dhammaan",
+    "back": "Dib u noqo",
+    "showing": "Waxaa la muujinayaa: {mode}",
+    "actionsAria": "Hawlaha qabyada",
+    "localVersion": "Afka la doortay",
+    "finnishVersion": "Af-Finnish (Suomi)",
+    "sideBySide": "Dhinac-dhinac",
+    "stacked": "Is-dulsaarsan",
+    "layout": "Qaab-dhigis",
+    "fiEmpty": "(nuqul Finnish ah ma jiro)"
+  },
+  "mode": {
+    "normal": "nooca caadiga ah",
+    "plain": "af fudud"
+  },
+  "status": {
+    "creating": "Waxaa la sameynayaa qabyo-qoraal…",
+    "refining": "Qabyo-qoraalka waa la hagaajinayaa…",
+    "styling": "Qaab ayaa la saaraya…",
+    "done": "Waa diyaar.",
+    "error": "Khalad ku yimid qabyo-qoraalka."
+  },
+  "field": {
+    "companyLabel": "Magaca shirkadda (ikhtiyaari)",
+    "companyPh": "tusaale Autoklinikka",
+    "jobOrCompany": "Xiriirka xayeysiiska shaqada AMA magaca shirkadda",
+    "introReq": "Qor 2–3 jumladood oo naftaada ka hadlaya.",
+    "urlInvalid": "URL-ku waa inuu sax noqdaa (http/https).",
+    "strengthsPh": "tusaale: macaamiil u janjeera, taxaddar, firfircoon"
+  },
+  "tone": {
+    "neutral": "Dabeecad shaqo",
+    "friendly": "Saaxiibtinimo",
+    "formal": "Rasmiga ah"
+  },
+  "length": {
+    "short": "Gaaban",
+    "medium": "Dhexdhexaad",
+    "long": "Dheer"
+  },
+  "style": {
+    "clear": "Af cad oo fudud",
+    "selko": "Af sahlan",
+    "confident": "Kalsooni leh & natiijo ujeeddo leh",
+    "friendly": "Saaxiibtinimo & naxariis leh",
+    "analytical": "Falanqayn & nidaamsan",
+    "story": "Sheeko ku salaysan",
+    "noNonsense": "Toos & farsamo"
+  }
+}

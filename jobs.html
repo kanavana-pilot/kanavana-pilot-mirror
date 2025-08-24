@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<title data-i18n="app.title">AI-avusteinen työhakemus – Kanavana</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Performance: preconnect + swap -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Google Fonts v2: Noto Sans + Noto Sans Arabic -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&family=Noto+Sans+Arabic:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/assets/css/jobs.css">
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<header class="topbar">
+  <label for="langSel" class="visually-hidden" data-i18n="app.langLabel">Kieli</label>
+  <select id="langSel" aria-label="Kieli" data-i18n-attr="aria-label:app.langLabel">…</select>
+</header>
+
+<h1 data-i18n="app.title">AI-avusteinen työhakemus</h1>
+
+<!-- Virhekooste -->
+<div id="errorSummary" class="error-summary" role="alert" aria-labelledby="errorSummaryTitle" hidden>
+  <h2 id="errorSummaryTitle" data-i18n="app.errorSummary.title">Tarkista ja korjaa nämä kentät</h2>
+  <ul id="errorList"></ul>
+</div>
+
+
+
+<div class="top-nav" id="stepNav" role="tablist" aria-label="Vaiheet" data-i18n-attr="aria-label:app.stepsAria">
+  <button class="badge step-badge" data-step="0" role="tab"
+          id="step-tab-1" aria-controls="step-1" aria-selected="true"
+          data-i18n="app.steps.1">1/3 Perustiedot</button>
+
+  <button class="badge step-badge" data-step="1" role="tab"
+          id="step-tab-2" aria-controls="step-2" aria-selected="false"
+          data-i18n="app.steps.2">2/3 Tarkennukset</button>
+
+  <button class="badge step-badge" data-step="2" role="tab"
+          id="step-tab-3" aria-controls="step-3" aria-selected="false"
+          data-i18n="app.steps.3">3/3 Luonnos</button>
+
+  <div class="spacer" aria-hidden="true"></div>
+
+  <div id="resetWrap">
+    <button id="resetAll" class="btn-reset" aria-haspopup="menu" aria-expanded="false"
+            data-i18n="app.reset.menuButton">Tyhjennä lomake ▾</button>
+    <div id="resetMenu" role="menu" hidden>
+      <button data-action="reset-draft" data-i18n="app.reset.draft">Tyhjennä luonnos</button>
+      <button data-action="reset-all-lang" data-i18n="app.reset.allLang">Tyhjennä kaikki + kieli</button>
+      <button class="hide-for-users" data-action="hard-refresh" data-i18n="app.reset.hard">Kova päivitys</button>
+    </div>
+  </div>
+</div>
+
+<form id="form" novalidate>
+  <!-- VAIHE 1 -->
+  <section id="step-1" class="step" aria-hidden="false" aria-labelledby="h-step-1">
+    <h2 id="h-step-1" data-i18n="app.headings.step1">Perustiedot</h2>
+
+    <p class="hint" data-i18n="app.hints.step1">
+      Liitä työilmoituksen linkki ja kuvaile osaamistasi. AI laatii luonnoksen, jota muokkaat itse.
+    </p>
+
+    <div class="row" id="grp-company">
+      <label for="company" data-i18n="field.companyLabel">Yrityksen nimi (valinnainen)</label>
+      <input id="company" type="text"
+             placeholder="Esim. Autoklinikka"
+             data-i18n-attr="placeholder:field.companyPh">
+    </div>
+
+    <div class="row" id="grp-jobLink">
+      <label for="jobLink" data-i18n="field.jobOrCompany">Työpaikan linkki TAI yrityksen nimi</label>
+      <input id="jobLink" type="text"
+             data-i18n-attr="placeholder:field.jobOrCompany"
+             placeholder="Työpaikan linkki TAI yrityksen nimi">
+      <div id="err-jobLink" class="error" aria-live="polite"></div>
+    </div>
+
+    <div class="row" id="grp-intro">
+      <label for="intro" data-i18n="app.hints.intro">Lyhyt esittely (2–3 virkettä)</label>
+      <textarea id="intro" name="intro" rows="3" required
+                data-i18n-attr="aria-label:app.hints.intro"
+                aria-label="Lyhyt esittely (2–3 virkettä)"></textarea>
+      <div id="err-intro" class="error" aria-live="polite"
+           data-i18n="field.introReq">Kirjoita 2–3 virkettä esittelystäsi.</div>
+    </div>
+
+    <div class="actions">
+      <button type="button" id="to-2" data-i18n="app.buttons.continue">Jatka</button>
+    </div>
+
+    <p class="hint" data-i18n="app.hints.autosave">
+      Luonnos tallentuu selaimeen kirjoittaessasi. Lopussa voit poistaa kaiken.
+    </p>
+  </section>
+
+  <!-- VAIHE 2 -->
+  <section id="step-2" class="step" aria-hidden="true" aria-labelledby="h-step-2">
+    <h2 id="h-step-2" data-i18n="app.headings.step2">Tarkennukset</h2>
+
+    <div class="row" id="grp-strengths">
+      <label for="strengths" data-i18n="app.hints.strengths">3 vahvuutta (pilkuin eroteltuna)</label>
+      <input id="strengths" name="strengths" type="text"
+             placeholder="esim. asiakaslähtöisyys, huolellisuus, oma-aloitteisuus"
+             data-i18n-attr="placeholder:field.strengthsPh">
+      <div id="err-strengths" class="error" aria-live="polite"></div>
+    </div>
+
+    <div class="row" id="grp-motivation">
+      <label for="motivation" data-i18n="app.hints.motivation">Miksi haet tähän tehtävään?</label>
+      <textarea id="motivation" name="motivation" rows="3"
+                placeholder="2–3 syytä, miksi tehtävä kiinnostaa"
+                data-i18n-attr="placeholder:app.hints.motivationPh"></textarea>
+      <div id="err-motivation" class="error" aria-live="polite"></div>
+    </div>
+
+    <div class="row" id="grp-example">
+      <label for="example" data-i18n="app.hints.example">Paras näyttö osaamisestasi</label>
+      <textarea id="example" name="example" rows="3"
+                placeholder="Lyhyt konkreettinen esimerkki"
+                data-i18n-attr="placeholder:app.hints.examplePh"></textarea>
+      <div id="err-example" class="error" aria-live="polite"></div>
+    </div>
+
+    <div class="actions">
+      <button type="button" id="back-1" data-i18n="app.buttons.back">Takaisin</button>
+      <button type="button" id="to-3" data-i18n="app.buttons.createDraft">Luo AI-luonnos</button>
+    </div>
+  </section>
+
+  <!-- VAIHE 3 -->
+  <section id="step-3" class="step" aria-hidden="true" aria-labelledby="h-step-3">
+    <h2 id="h-step-3" data-i18n="app.headings.step3">Luonnos</h2>
+
+    <div class="ai-panel">
+      <div class="row">
+        <label for="tone" data-i18n="ui.tone">Sävy</label>
+        <select id="tone" name="tone">
+          <option value="neutral" data-i18n="tone.neutral">Asiallinen</option>
+          <option value="friendly" data-i18n="tone.friendly">Ystävällinen</option>
+          <option value="formal" data-i18n="tone.formal">Virkamiesmäinen</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="length" data-i18n="ui.length">Pituus</label>
+        <select id="length" name="length">
+          <option value="short" data-i18n="length.short">Lyhyt</option>
+          <option value="medium" data-i18n="length.medium" selected>Keskitaso</option>
+          <option value="long" data-i18n="length.long">Pitkä</option>
+        </select>
+      </div>
+
+      <!-- UUSI: tyylin iterointi samalle riville -->
+      <div class="row row-style">
+        <label for="styleSel" data-i18n="ui.style">Kirjoitustyyli</label>
+        <div class="style-inline">
+          <select id="styleSel">
+            <option value="clear" data-i18n="style.clear">Selkeä yleiskieli</option>
+            <option value="selko" data-i18n="style.selko">Selkokieli</option>
+            <option value="confident" data-i18n="style.confident">Itsevarma &amp; tuloskeskeinen</option>
+            <option value="friendly" data-i18n="style.friendly">Ystävällinen &amp; empaattinen</option>
+            <option value="analytical" data-i18n="style.analytical">Analyyttinen &amp; jäsennelty</option>
+            <option value="story" data-i18n="style.story">Tarinallinen</option>
+            <option value="noNonsense" data-i18n="style.noNonsense">Napakka &amp; tekninen</option>
+          </select>
+
+          <select id="lenSel" aria-label="Pituus" data-i18n-attr="aria-label:ui.length">
+            <option data-i18n="length.medium">Keskitaso</option>
+            <option data-i18n="length.short">Lyhyt</option>
+            <option data-i18n="length.long">Pitkä</option>
+          </select>
+
+          <button type="button" id="iterate" class="btn btn-primary" data-i18n="ui.iterate">Iteroi tyylillä</button>
+        </div>
+      </div>
+
+      <!-- Toiminnot: jaettu vasen/oikea -->
+      <div class="actions actions-split" aria-label="Luonnoksen toiminnot" data-i18n-attr="aria-label:ui.actionsAria">
+        <div class="left">
+          <button id="refine" type="button" data-i18n="ui.refine">Säädä uudelleen</button>
+          <button id="togglePlain" type="button" data-i18n="ui.plain">Näytä selkokieli</button>
+        </div>
+        <div class="right">
+          <button id="download" type="button" data-i18n="ui.download">Lataa .docx</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="renderMode" class="hint"
+           data-i18n="ui.showing"
+           data-i18n-attr="aria-label:ui.showing" data-role="render-mode"
+           aria-label="Näytetään: {mode}">Näytetään: normaali versio</div>
+
+      <!-- ULKOASU: kaksikielinen ulostulo -->
+      <div class="dual-actions">
+        <label class="visually-hidden" for="layoutSel" data-i18n="ui.layout">Asettelu</label>
+        <select id="layoutSel" aria-label="Asettelu" data-i18n-attr="aria-label:ui.layout">
+          <option value="cols" data-i18n="ui.sideBySide">Rinnakkain</option>
+          <option value="stack" data-i18n="ui.stacked">Allekain</option>
+        </select>
+
+
+      <div id="dualWrap" class="dual cols" aria-live="polite">
+        <section class="dual-pane">
+          <h3 class="dual-title" data-i18n="ui.localVersion">Valittu kieli</h3>
+          <div id="out-local" class="out" aria-live="polite"></div>
+        </section>
+
+        <section class="dual-pane">
+          <h3 class="dual-title" data-i18n="ui.finnishVersion">Suomeksi</h3>
+          <div id="out-fi" class="out" dir="ltr" aria-live="polite" data-i18n="ui.fiEmpty">(ei suomenkielistä versiota)</div>
+        </section>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="button" id="back-2" data-i18n="app.buttons.back">Takaisin</button>
+    </div>
+  </section>
+</form>
+
+<!-- Live-status (ruudunlukijoille) -->
+<div id="status" role="status" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
+
+<div id="savedToast" class="visually-hidden toast" role="status" aria-live="polite" data-i18n="app.toast.saved">
+  Luonnos tallennettu
+</div>
+
+<!-- Yleinen latausoverlay -->
+<div id="busyIndicator" class="busy-indicator" aria-hidden="true">
+  <div class="spinner" role="progressbar" aria-label="Ladataan" data-i18n-attr="aria-label:app.loading.label"></div>
+</div>
+
+<script src="/assets/js/i18n.js" defer></script>
+<script src="/assets/js/jobs.js"></script>
+</body>
+</html>

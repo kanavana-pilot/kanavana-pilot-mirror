@@ -1,0 +1,104 @@
+{
+  "app": {
+    "title": "Solicitud de empleo asistida por IA",
+    "langLabel": "Idioma",
+    "stepsAria": "Pasos",
+    "steps": {
+      "1": "1/3 Datos básicos",
+      "2": "2/3 Detalles",
+      "3": "3/3 Borrador"
+    },
+    "headings": {
+      "step1": "Datos básicos",
+      "step2": "Detalles",
+      "step3": "Borrador"
+    },
+    "hints": {
+      "step1": "Pega el enlace de la oferta y describe tus habilidades. La IA creará un borrador que podrás editar.",
+      "intro": "Presentación breve (2–3 frases)",
+      "strengths": "3 fortalezas (separadas por comas)",
+      "motivation": "¿Por qué solicitas este puesto?",
+      "example": "Tu mejor evidencia de competencias",
+      "motivationPh": "2–3 motivos por los que te interesa el puesto",
+      "examplePh": "Un ejemplo breve y concreto",
+      "autosave": "El borrador se guarda en el navegador mientras escribes. Al final puedes borrar todo."
+    },
+    "errorSummary": {
+      "title": "Revisa y corrige estos campos"
+    },
+    "reset": {
+      "menuButton": "Limpiar formulario ▾",
+      "draft": "Limpiar borrador",
+      "allLang": "Borrar todo + idioma",
+      "hard": "Actualización forzada"
+    },
+    "buttons": {
+      "continue": "Continuar",
+      "back": "Atrás",
+      "createDraft": "Crear borrador con IA"
+    },
+    "toast": {
+      "saved": "Borrador guardado"
+    },
+    "loading": {
+      "label": "Cargando"
+    }
+  },
+  "ui": {
+    "tone": "Tono",
+    "length": "Longitud",
+    "style": "Estilo de escritura",
+    "iterate": "Iterar estilo",
+    "refine": "Refinar",
+    "plain": "Mostrar en lenguaje sencillo",
+    "download": "Descargar .docx",
+    "reset": "Borrar todo",
+    "back": "Atrás",
+    "showing": "Mostrando: {mode}",
+    "actionsAria": "Acciones del borrador",
+    "localVersion": "Idioma seleccionado",
+    "finnishVersion": "En finés",
+    "sideBySide": "Lado a lado",
+    "stacked": "Apilado",
+    "layout": "Disposición",
+    "fiEmpty": "(no hay versión en finés)"
+  },
+  "mode": {
+    "normal": "versión normal",
+    "plain": "lenguaje sencillo"
+  },
+  "status": {
+    "creating": "Creando borrador…",
+    "refining": "Afinando borrador…",
+    "styling": "Aplicando estilo…",
+    "done": "Listo.",
+    "error": "Error en el borrador."
+  },
+  "field": {
+    "companyLabel": "Nombre de la empresa (opcional)",
+    "companyPh": "p. ej., Autoklinikka",
+    "jobOrCompany": "Enlace de la oferta O nombre de la empresa",
+    "introReq": "Escribe 2–3 frases sobre ti.",
+    "urlInvalid": "La URL debe ser válida (http/https).",
+    "strengthsPh": "p. ej., orientación al cliente, minuciosidad, proactividad"
+  },
+  "tone": {
+    "neutral": "Profesional",
+    "friendly": "Amable",
+    "formal": "Oficial"
+  },
+  "length": {
+    "short": "Corta",
+    "medium": "Media",
+    "long": "Larga"
+  },
+  "style": {
+    "clear": "Lenguaje estándar claro",
+    "selko": "Lenguaje sencillo",
+    "confident": "Seguro y orientado a resultados",
+    "friendly": "Amable y empático",
+    "analytical": "Analítico y estructurado",
+    "story": "Narrativo",
+    "noNonsense": "Directo y técnico"
+  }
+}
