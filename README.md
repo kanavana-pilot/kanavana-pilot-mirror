@@ -67,3 +67,4 @@ API key is provided via .htaccess (SetEnv OPENAI_API_KEY).
 Developed by Kanavana – for EU pilot demonstration.
 
 - CI deploy test Tue Aug 26 00:17:40 EEST 2025
+- CI trigger Tue Aug 26 00:32:08 EEST 2025
