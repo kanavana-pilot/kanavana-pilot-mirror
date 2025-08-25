@@ -1,0 +1,20 @@
+--- a/jobs.html
++++ b/jobs.html
+@@
+ <!DOCTYPE HTML>
++<!--
++============================================================
++ Kanavana Pilot – jobs.html
++ -----------------------------------------------------------
++ Tämä on AI-avusteisen monikielisen työnhaku- ja verkkohakudemonstration
++ prototyyppi EU-hakemuksen pilottiin.
++
++ Ominaisuudet:
++  - GPT + Tavily -integraatio
++  - Tukee hakua eri kielillä ja alueilta
++  - Tavoitteena näyttää käytännön hyötyjä kotoutumisessa ja
++    työmarkkinoiden navigoinnissa.
++
++ HUOM: Tämä on peiliversio (mirror), ei sisällä API-avaimia.
++============================================================
++-->

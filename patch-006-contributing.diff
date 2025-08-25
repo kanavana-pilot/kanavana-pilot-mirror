@@ -1,0 +1,38 @@
+--- /dev/null
++++ b/CONTRIBUTING.md
+@@
++# Contributing to Kanavana Pilot Mirror
++
++This repository is a **sanitized mirror** of the Kanavana pilot environment.  
++It is intended for demonstration and collaboration purposes in EU project applications.
++
++## Guidelines
++
++1. **No secrets in this repo**  
++   - `.env` and `.htaccess` are ignored.  
++   - Use `.env.example` and `.htaccess.sample` to document variables/config.  
++
++2. **Patch workflow**  
++   - Clone or fork the repository.  
++   - Make changes locally.  
++   - Create a unified diff:
++     ```bash
++     git diff > patch-xyz.diff
++     ```
++   - Share the patch file for review.  
++
++3. **Applying patches**  
++   - On the mirror maintainer side:
++     ```bash
++     git apply patch-xyz.diff
++     git commit -am "apply: patch xyz"
++     git push
++     ```
++
++4. **Style & documentation**  
++   - Each prototype file should include a header comment (already added).  
++   - README.md provides project overview.  
++   - Keep commits atomic with clear messages.  
++
++## Purpose
++This mirror is not a production repo but a safe place to show structure, receive improvements, and track clean history for the Kanavana Pilot project.

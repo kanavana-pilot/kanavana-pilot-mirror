@@ -1,0 +1,20 @@
+--- a/common_sense.php
++++ b/common_sense.php
+@@
+ <?php
++
++/**
++ * ============================================================
++ * Common Sense Agent (Pilot MVP)
++ * ------------------------------------------------------------
++ * Tämä on EU-hakemuksen pilotointia varten tehty demonstraatio.
++ * 
++ * Ominaisuudet:
++ *  - Prompt-ohjattu suunnittelu, turvakaiteilla
++ *  - Keskeytettävä tavoitteen suoritus
++ *  - JSON API + minimaalinen selainkäyttöliittymä
++ * 
++ * HUOM: Tämä on peiliversio (mirror), joten API-avaimia tai
++ * muita salaisuuksia ei sisälly tähän repositorioon.
++ * ============================================================
++ */

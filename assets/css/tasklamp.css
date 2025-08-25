@@ -1,0 +1,161 @@
+/* TaskLamp CSS — selkeä, WCAG 2.1 AA, ilman inline-tyylejä */
+:root{
+  --bg: #0f1115;
+  --card: #161a22;
+  --text: #e7eaf1;
+  --muted: #9aa3b2;
+  --accent: #3a7bfd;
+  --accent-contrast: #ffffff;
+  --danger: #d43a3a;
+  --focus: #ffbf47;
+  --radius: 14px;
+  --space: 16px;
+  --space-lg: 24px;
+  --shadow: 0 6px 24px rgba(0,0,0,0.25);
+  --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+/* Näytä kartalla painike piilotetaan */
+#btn-citymap { display: none; }
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font: 18px/1.55 var(--font);
+}
+.container{width:min(1080px, 100% - 32px); margin-inline:auto}
+
+.skip-link{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{
+  position:static; width:auto; height:auto; padding:8px 12px;
+  background:var(--focus); color:#000; z-index:1000;
+}
+
+.visually-hidden{position:absolute!important; height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+.muted{color:var(--muted)}
+
+.tl-header{border-bottom:1px solid #222; padding:16px 0}
+.tl-title{margin:0 0 8px 0; font-size:1.5rem}
+
+.tl-toolbar{list-style:none; padding:0; margin:0; display:flex; gap:12px; align-items:center}
+.tl-toolbar select,.tl-toolbar button{font-size:1rem}
+
+.tl-footer{border-top:1px solid #222; padding:24px 0; margin-top:32px}
+
+.tl-card{
+  background:var(--card); border-radius:var(--radius);
+  padding:var(--space-lg); margin:24px 0; box-shadow:var(--shadow);
+}
+.tl-card--form .grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+@media (max-width: 720px){ .tl-card--form .grid{grid-template-columns:1fr} }
+
+.field label{display:block; margin-bottom:6px; font-weight:600}
+.field input,.field textarea, .field select{
+  width:100%; padding:12px 14px; border-radius:12px; border:1px solid #2a3140; background:#0c0f14; color:var(--text);
+}
+.field input:focus, .field textarea:focus, .field select:focus{
+  outline:3px solid var(--focus); outline-offset:1px;
+}
+.hint{display:block; color:var(--muted); margin-top:4px}
+
+.actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:12px}
+
+.btn{
+  appearance:none; border:none; padding:12px 16px; border-radius:12px; cursor:pointer;
+  background:#2a3140; color:var(--text);
+}
+.btn:hover{filter:brightness(1.1)}
+.btn:focus{outline:3px solid var(--focus); outline-offset:2px}
+.btn-primary{background:var(--accent); color:var(--accent-contrast)}
+.btn-ghost{background:transparent; border:1px solid #2a3140}
+.btn-danger{background:var(--danger); color:#fff}
+
+.tl-card--result .result-headline{display:flex; align-items:center; justify-content:space-between; gap:12px}
+.result-actions{display:flex; flex-wrap:wrap; gap:8px}
+
+.step-card h4{margin:0 0 8px 0; font-size:1.25rem}
+.step-card p{margin:0 0 12px 0}
+.meta{list-style:disc; margin:0 0 0 20px; color:var(--muted)}
+.inline-link{margin-left:8px}
+
+.tl-all summary{cursor:pointer; margin:12px 0; font-weight:600}
+#step-list{margin:8px 0 0 20px}
+
+.tl-followup{
+  border:1px dashed #394255; border-radius:12px; padding:12px; margin-bottom:12px; background:#10141b;
+}
+.tl-followup .inline{display:flex; gap:8px; margin-top:8px}
+.tl-followup input{
+  flex:1; min-width:180px; background:#0c0f14; color:var(--text);
+  border:1px solid #2a3140; border-radius:8px; padding:10px 12px;
+}
+.noscript{padding:12px; background:#fff3cd; color:#000; margin:8px 0; border-radius:8px}
+
+/* --- Spinner / latausindikaattori --- */
+.tl-spinner{
+  position: fixed; inset: 0;
+  display: grid; place-items: center;
+  background: rgba(15,17,21,0.6);
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+.tl-spinner[hidden]{ display:none }
+.tl-spinner .dots{ display:flex; gap:10px; margin-bottom:8px }
+.tl-spinner .dot{
+  width:12px; height:12px; border-radius:50%;
+  background: var(--accent);
+  animation: tl-bounce 1s infinite ease-in-out;
+}
+.tl-spinner .dot:nth-child(2){ animation-delay: .15s }
+.tl-spinner .dot:nth-child(3){ animation-delay: .3s }
+.tl-spinner .label{ color:var(--text); font-weight:600 }
+@keyframes tl-bounce{
+  0%,80%,100%{ transform: scale(0.6); opacity:.7 }
+  40%{ transform: scale(1); opacity:1 }
+}
+body.is-loading{ cursor: progress }
+.tl-card a { color: #ffcc00; }
+.tl-card a:hover,
+.tl-card a:focus { color: #ffe066; }
+/* Kielivalintalista */
+#lang {
+  appearance: none;             /* piilota selaimen oletusnuoli */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  background-color: #222;       /* tumma tausta */
+  color: #fff;                  /* valkoinen teksti */
+  border: 1px solid #555;       /* harmaa kehys */
+  border-radius: 6px;
+  padding: 6px 28px 6px 10px;   /* oikealle tilaa nuolelle */
+  font-size: 0.95rem;
+  line-height: 1.4;
+  cursor: pointer;
+  min-width: 120px;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* Hover & focus */
+#lang:hover {
+  border-color: #ffcc00;        /* keltainen hover-kehys */
+}
+#lang:focus {
+  outline: none;
+  border-color: #ffcc00;
+  box-shadow: 0 0 0 2px rgba(255,204,0,0.3);
+}
+
+/* Nuoli omaan tyyliin */
+#lang {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: 16px 16px;
+}
+
+/* Option rivit */
+#lang option {
+  background: #222;
+  color: #fff;
+}

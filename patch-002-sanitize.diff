@@ -1,0 +1,45 @@
+--- /dev/null
++++ b/.gitignore
+@@
++# Secrets
++.env
++.htaccess
++*.key
++*.pem
++
++# Environment / temporary
++node_modules/
++npm-debug.log*
++yarn.lock
++error_log
++logs/
++cache/
++tmp/
++_jot_stash/
++
++# PHP / composer (mirror-tyyliin kevyt)
++vendor/
++composer.lock
++
++# Media & dumps
++uploads/
++*.zip
++*.tar
++*.sql
++*.bak
+--- /dev/null
++++ b/.env.example
+@@
++# Example environment variables (no secrets)
++APP_ENV=development
++OPENAI_API_KEY=
++TAVILY_API_KEY=
+--- /dev/null
++++ b/.htaccess.sample
+@@
++# Example .htaccess file (no secrets)
++
++# Provide API key via SetEnv
++# SetEnv OPENAI_API_KEY "your-key-here"
++
++# Usual PHP/Apache settings would go here

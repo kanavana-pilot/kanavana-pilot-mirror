@@ -1,0 +1,21 @@
+--- a/planner.php
++++ b/planner.php
+@@
+ <?php
++
++/**
++ * ============================================================
++ * Kanavana Pilot – planner.php
++ * ------------------------------------------------------------
++ * Tämä tiedosto demonstroi "Planner"-toiminnallisuutta:
++ *  - Käyttää GPT:tä suunnitteluun/polkujen hahmottamiseen
++ *  - Yhdistää käyttäjän syötteet ja AI:n ehdotukset
++ *  - Luo jäsennellyn vastauksen (JSON), jota voidaan jatko-
++ *    käsitellä selaimen käyttöliittymässä.
++ * 
++ * Käyttötarkoitus: EU-hakemuksen pilotissa demonstraatio
++ * suunnittelua avustavasta AI-agentista.
++ * 
++ * HUOM: Tämä on peiliversio (mirror) – ei sisällä avaimia.
++ * ============================================================
++ */
