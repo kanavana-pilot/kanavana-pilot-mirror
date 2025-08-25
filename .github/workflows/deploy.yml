@@ -16,7 +16,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.CPANEL_SSH_KEY }}
 
-      - name: Push to cPanel bare repo (triggers post-receive)
+      - name: Push to cPanel bare repo
         env:
           GIT_SSH_COMMAND: ssh -o StrictHostKeyChecking=no
         run: |
