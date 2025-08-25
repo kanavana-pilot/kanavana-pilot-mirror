@@ -16,9 +16,14 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.CPANEL_SSH_KEY }}
 
-      - name: Push to cPanel bare repo
+      - name: SSH smoke test (10s timeout, verbose)
+        run: |
+          ssh -vvv -o StrictHostKeyChecking=no -o ConnectTimeout=10 -p 22 \
+            "${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }}" 'echo SSH_OK'
+
+      - name: Push to cPanel bare repo (triggers post-receive)
         env:
-          GIT_SSH_COMMAND: ssh -o StrictHostKeyChecking=no
+          GIT_SSH_COMMAND: ssh -o StrictHostKeyChecking=no -o ConnectTimeout=10
         run: |
           git remote add cpanel "ssh://${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }}:22/~/repos/kanavana-pilot.git" \
             || git remote set-url cpanel "ssh://${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }}:22/~/repos/kanavana-pilot.git"
