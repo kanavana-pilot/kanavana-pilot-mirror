@@ -71,3 +71,4 @@ Developed by Kanavana – for EU pilot demonstration.
 - CI trigger Tue Aug 26 00:41:40 EEST 2025
 - CI trigger Tue Aug 26 00:45:19 EEST 2025
 - CI IP test Tue Aug 26 00:56:36 EEST 2025
+- CI debug Tue Aug 26 00:59:41 EEST 2025
