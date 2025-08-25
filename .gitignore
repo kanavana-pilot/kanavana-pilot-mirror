@@ -14,7 +14,7 @@ cache/
 tmp/
 _jot_stash/
 
-# PHP / composer (mirror-käyttöön: ei vendor)
+# PHP / composer (mirror-tyyliin kevyt)
 vendor/
 composer.lock
 
