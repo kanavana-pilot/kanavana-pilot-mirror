@@ -1,4 +1,4 @@
-name: Deploy to cPanel bare repo
+name: Deploy
 
 on:
   push:
@@ -9,13 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Add server to known_hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -H "${{ secrets.CPANEL_HOST }}" >> ~/.ssh/known_hosts
+      - uses: actions/checkout@v4
 
       - name: Start SSH agent with private key
         uses: webfactory/ssh-agent@v0.9.0
@@ -23,6 +17,9 @@ jobs:
           ssh-private-key: ${{ secrets.CPANEL_SSH_KEY }}
 
       - name: Push to cPanel bare repo (triggers post-receive)
+        env:
+          GIT_SSH_COMMAND: ssh -o StrictHostKeyChecking=no
         run: |
-          git remote add cpanel "ssh://${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }}:22/~/repos/kanavana-pilot.git" || true
+          git remote add cpanel "ssh://${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }}:22/~/repos/kanavana-pilot.git" \
+            || git remote set-url cpanel "ssh://${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }}:22/~/repos/kanavana-pilot.git"
           git push cpanel main
